@@ -1,0 +1,17 @@
+{
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "headers": [
+        {
+            "source": "/(.*)",
+            "headers": [
+                { "key": "X-Content-Type-Options", "value": "nosniff" },
+                { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+            ]
+        }
+    ],
+    "redirects": [],
+    "rewrites": [
+        { "source": "/((?!index|404|css|js|images|assets).*)", "destination": "/404.html" }
+    ]
+}
