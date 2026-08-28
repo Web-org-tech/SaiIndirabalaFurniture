@@ -7,6 +7,8 @@ import { initSliders } from './slider.js';
 import { initComparison } from './comparison.js';
 import { initForms } from './form.js';
 import { initCad360 } from './cad360.js';
+import { initDesign3D } from './design3d.js';
+import { initFeedback } from './feedback.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // 01. Dismiss Loading Screen
@@ -164,4 +166,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initComparison();
     initForms();
     initCad360();
+    initDesign3D();
+    initFeedback();
 });

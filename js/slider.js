@@ -4,14 +4,16 @@
  */
 
 export function initSliders() {
-    const sliderWrappers = document.querySelectorAll('.slider-wrapper');
+    const sliderWrappers = document.querySelectorAll('.slider-wrapper, .works-swipe-wrapper');
 
     sliderWrappers.forEach(wrapper => {
-        const track = wrapper.querySelector('.slider-track');
-        const prevBtn = wrapper.querySelector('.slider-prev');
-        const nextBtn = wrapper.querySelector('.slider-next');
-
+        const track = wrapper.querySelector('.slider-track, .works-swipe-track');
         if (!track) return;
+
+        // Find buttons in wrapper, or in parent section / header controls
+        const section = wrapper.closest('section') || wrapper.parentElement;
+        const prevBtn = wrapper.querySelector('.slider-prev') || section?.querySelector('.slider-prev');
+        const nextBtn = wrapper.querySelector('.slider-next') || section?.querySelector('.slider-next');
 
         // Update arrow button disabled states
         function updateButtons() {
@@ -23,7 +25,7 @@ export function initSliders() {
 
         // Scroll step calculation (one card width + gap)
         function getScrollStep() {
-            const firstCard = track.querySelector('.slider-card');
+            const firstCard = track.querySelector('.slider-card, .works-swipe-card');
             if (!firstCard) return track.clientWidth * 0.8;
             const style = window.getComputedStyle(track);
             const gap = parseFloat(style.gap) || 20;
@@ -31,13 +33,15 @@ export function initSliders() {
         }
 
         if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
+            prevBtn.addEventListener('click', (e) => {
+                e.preventDefault();
                 track.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
             });
         }
 
         if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
+            nextBtn.addEventListener('click', (e) => {
+                e.preventDefault();
                 track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
             });
         }
@@ -55,6 +59,8 @@ export function initSliders() {
         let scrollLeft;
 
         track.addEventListener('mousedown', (e) => {
+            // Only drag on primary mouse button and not on interactive links/buttons
+            if (e.button !== 0 || e.target.closest('a, button')) return;
             isDown = true;
             track.classList.add('dragging');
             startX = e.pageX - track.offsetLeft;
@@ -84,3 +90,4 @@ export function initSliders() {
         window.addEventListener('resize', updateButtons);
     });
 }
+
