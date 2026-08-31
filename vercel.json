@@ -12,6 +12,6 @@
     ],
     "redirects": [],
     "rewrites": [
-        { "source": "/((?!index|404|css|js|images|assets).*)", "destination": "/404.html" }
+        { "source": "/((?!index|404|css|js|images|assets|robots\\.txt|sitemap\\.xml).*)", "destination": "/404.html" }
     ]
 }
