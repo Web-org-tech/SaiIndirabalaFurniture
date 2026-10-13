@@ -5,7 +5,6 @@
  */
 
 import { getSupabase, isConfigured } from './adminClient.js';
-import { setupImageUploader } from './imageUpload.js';
 
 // Module State
 let categoriesData = [];
@@ -13,7 +12,6 @@ let editingCategoryId = null;
 let deletingCategory = null;
 let previewDebounceTimer = null;
 let slugManuallyEdited = false;
-let categoryImageUploader = null;
 
 /**
  * Escapes HTML characters for safe DOM interpolation.
@@ -282,29 +280,21 @@ export function renderCategoriesList() {
     container.innerHTML = `
         <div class="banners-grid">
             ${filtered.map(cat => `
-                <div class="banner-card" data-id="${cat.id}">
-                    <div class="banner-card-media">
-                        <img src="${escapeHtml(cat.image_url || '../images/hero/hero_furniture.png')}" 
-                             alt="${escapeHtml(cat.name)}" 
-                             class="banner-card-thumb"
-                             loading="lazy"
-                             onerror="this.src='../images/hero/hero_furniture.png';">
-                        <div class="banner-card-badges">
-                            <span class="${cat.is_published ? 'badge-published' : 'badge-draft'}">
-                                ${cat.is_published ? '● Live' : '○ Draft'}
-                            </span>
-                            <span class="badge-order">Order #${cat.display_order}</span>
-                        </div>
-                    </div>
-
-                    <div class="banner-card-body">
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.35rem;">
-                            <h4 class="banner-card-title">${escapeHtml(cat.name)}</h4>
+                <div class="banner-card category-card" data-id="${cat.id}">
+                    <div class="banner-card-body" style="padding: 1.25rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem;">
+                            <div style="display: flex; gap: 0.5rem; align-items: center;">
+                                <span class="${cat.is_published ? 'badge-published' : 'badge-draft'}">
+                                    ${cat.is_published ? '● Live' : '○ Draft'}
+                                </span>
+                                <span class="badge-order">Order #${cat.display_order}</span>
+                            </div>
                             <span class="badge-count" title="${cat.product_count} product(s) linked">
                                 🪑 ${cat.product_count} ${cat.product_count === 1 ? 'Product' : 'Products'}
                             </span>
                         </div>
 
+                        <h4 class="banner-card-title" style="font-size: 1.15rem; margin-bottom: 0.25rem;">${escapeHtml(cat.name)}</h4>
                         <span class="slug-preview-text">/${escapeHtml(cat.slug)}</span>
 
                         <p class="banner-card-subtitle" style="margin-top: 0.5rem;">
@@ -500,10 +490,8 @@ function openCategoryModal(category = null) {
         document.getElementById('category-field-slug').value = category.slug || '';
         if (slugPreview) slugPreview.textContent = category.slug || 'auto-generated';
         document.getElementById('category-field-description').value = category.description || '';
-        document.getElementById('category-field-image-url').value = category.image_url || '';
         document.getElementById('category-field-display-order').value = category.display_order ?? 0;
         document.getElementById('category-field-is-published').checked = Boolean(catIsPublished(category));
-        categoryImageUploader?.setInitialUrl(category.image_url || '');
     } else {
         editingCategoryId = null;
         if (titleEl) titleEl.textContent = 'Add New Category';
@@ -512,7 +500,6 @@ function openCategoryModal(category = null) {
         const maxOrder = categoriesData.reduce((max, c) => Math.max(max, c.display_order || 0), -1);
         document.getElementById('category-field-display-order').value = maxOrder + 1;
         document.getElementById('category-field-is-published').checked = true;
-        categoryImageUploader?.reset();
     }
 
     modal.style.display = 'flex';
@@ -641,20 +628,6 @@ async function handleCategoryFormSubmit(e) {
         return;
     }
 
-    // Validation 03: Resolve Device Image Upload (Optional)
-    let imageUrl = null;
-    try {
-        if (saveBtn) saveBtn.disabled = true;
-        if (saveBtnText) saveBtnText.textContent = 'Uploading photo...';
-        const resolved = await categoryImageUploader.resolveFinalUrl();
-        if (resolved) imageUrl = resolved;
-    } catch (upErr) {
-        showError(upErr.message);
-        if (saveBtn) saveBtn.disabled = false;
-        if (saveBtnText) saveBtnText.textContent = 'Save Category';
-        return;
-    }
-
     // Validation 04: Display order
     const displayOrder = parseInt(displayOrderInput, 10);
     if (isNaN(displayOrder) || displayOrder < 0) {
@@ -684,7 +657,6 @@ async function handleCategoryFormSubmit(e) {
             name,
             slug,
             description,
-            image_url: imageUrl,
             display_order: displayOrder,
             is_published: isPublished
         };
@@ -817,20 +789,6 @@ export function initCategoriesModule() {
     if (cancelDelBtn) cancelDelBtn.addEventListener('click', closeDeleteCategoryModal);
     if (delBackdrop) delBackdrop.addEventListener('click', closeDeleteCategoryModal);
     if (confirmDelBtn) confirmDelBtn.addEventListener('click', handleConfirmDeleteCategory);
-
-    // 00. Initialize Category Image Uploader
-    categoryImageUploader = setupImageUploader({
-        dropzoneEl: document.getElementById('category-dropzone'),
-        fileInputEl: document.getElementById('category-file-input'),
-        previewImgEl: document.getElementById('category-preview-img'),
-        previewWrapEl: document.getElementById('category-preview-wrap'),
-        placeholderEl: document.getElementById('category-dropzone-placeholder'),
-        clearBtnEl: document.getElementById('category-clear-image-btn'),
-        urlFallbackInputEl: document.getElementById('category-field-image-url'),
-        fallbackToggleBtnEl: document.getElementById('category-fallback-toggle-btn'),
-        fallbackWrapEl: document.getElementById('category-fallback-wrap'),
-        folder: 'categories'
-    });
 
     // 05. Auto-Slug Generation & Preview
     const nameInput = document.getElementById('category-field-name');

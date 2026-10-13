@@ -62,13 +62,13 @@ export async function uploadImageToStorage(file, folder = 'uploads') {
         .from(STORAGE_BUCKET)
         .upload(storagePath, file, {
             cacheControl: '3600',
-            upsert: false
+            upsert: true
         });
 
     if (error) {
         if (error.message && (error.message.includes('row-level security') || error.message.includes('AccessDenied') || error.message.includes('bucket'))) {
             throw new Error(
-                'Supabase Storage upload blocked by permissions. Please run Migration 004 in Supabase SQL Editor to activate the "media" bucket policies.'
+                `Supabase Storage upload blocked: ${error.message}. Ensure the "media" bucket is Public and storage policies are active in Supabase SQL Editor.`
             );
         }
         throw new Error(`Upload failed: ${error.message}`);
