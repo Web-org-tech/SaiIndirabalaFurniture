@@ -280,51 +280,56 @@ export function renderCategoriesList() {
     container.innerHTML = `
         <div class="banners-grid">
             ${filtered.map(cat => `
-                <div class="banner-card category-card" data-id="${cat.id}">
-                    <div class="banner-card-body" style="padding: 1.25rem;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem;">
-                            <div style="display: flex; gap: 0.5rem; align-items: center;">
-                                <span class="${cat.is_published ? 'badge-published' : 'badge-draft'}">
-                                    ${cat.is_published ? '● Live' : '○ Draft'}
-                                </span>
-                                <span class="badge-order">Order #${cat.display_order}</span>
+                <div class="category-card" data-id="${cat.id}">
+                    <div class="category-card-inner">
+                        <!-- Top Bar: Interactive Status Pill + Order Stepper -->
+                        <div class="category-card-top">
+                            <button type="button" class="cat-status-btn ${cat.is_published ? 'is-live' : 'is-draft'} btn-toggle-cat-publish" data-id="${cat.id}" title="${cat.is_published ? 'Click to make Draft' : 'Click to make Live'}">
+                                <span class="cat-status-dot"></span>
+                                <span>${cat.is_published ? 'Live' : 'Draft'}</span>
+                            </button>
+
+                            <div class="cat-order-widget">
+                                <span class="cat-order-text">Order <strong>#${cat.display_order}</strong></span>
+                                <div class="cat-order-arrows">
+                                    <button type="button" class="btn-order-step btn-cat-move-up" data-id="${cat.id}" title="Move Order Up" aria-label="Move Order Up">
+                                        <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 15l-6-6-6 6"/></svg>
+                                    </button>
+                                    <button type="button" class="btn-order-step btn-cat-move-down" data-id="${cat.id}" title="Move Order Down" aria-label="Move Order Down">
+                                        <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>
+                                    </button>
+                                </div>
                             </div>
-                            <span class="badge-count" title="${cat.product_count} product(s) linked">
-                                🪑 ${cat.product_count} ${cat.product_count === 1 ? 'Product' : 'Products'}
-                            </span>
                         </div>
 
-                        <h4 class="banner-card-title" style="font-size: 1.15rem; margin-bottom: 0.25rem;">${escapeHtml(cat.name)}</h4>
-                        <span class="slug-preview-text">/${escapeHtml(cat.slug)}</span>
+                        <!-- Content Block: Title + Product Count + Slug + Description -->
+                        <div class="cat-content-block">
+                            <div class="cat-title-row">
+                                <h4 class="cat-title">${escapeHtml(cat.name)}</h4>
+                                <span class="cat-products-badge" title="${cat.product_count} product(s) linked">
+                                    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="6" width="16" height="10" rx="2"/><path d="M6 16v4M18 16v4M2 10h20"/></svg>
+                                    <span>${cat.product_count} ${cat.product_count === 1 ? 'Product' : 'Products'}</span>
+                                </span>
+                            </div>
 
-                        <p class="banner-card-subtitle" style="margin-top: 0.5rem;">
-                            ${escapeHtml(cat.description || 'No catalog summary description set.')}
-                        </p>
+                            <div class="cat-slug-strip">
+                                <span class="cat-slug-label">Slug</span>
+                                <code class="cat-slug-val">/${escapeHtml(cat.slug)}</code>
+                            </div>
 
-                        <div class="banner-card-actions">
-                            <button type="button" class="btn-action-icon btn-toggle-cat-publish ${cat.is_published ? 'is-published' : 'is-draft'}" data-id="${cat.id}" title="${cat.is_published ? 'Click to Unpublish' : 'Click to Publish'}">
-                                ${cat.is_published ? `
-                                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                                    <span>Live (Unpublish)</span>
-                                ` : `
-                                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
-                                    <span>Draft (Publish)</span>
-                                `}
+                            <p class="cat-desc">
+                                ${escapeHtml(cat.description || 'No catalog summary description set.')}
+                            </p>
+                        </div>
+
+                        <!-- Actions Bottom Bar: Edit Category & Delete -->
+                        <div class="category-card-actions">
+                            <button type="button" class="btn-cat-action btn-cat-action-edit btn-edit-category" data-id="${cat.id}">
+                                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                                <span>Edit Category</span>
                             </button>
-                            <button type="button" class="btn-action-icon btn-cat-move-up" data-id="${cat.id}" title="Move Order Up" aria-label="Move Order Up">
-                                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-                                <span>Up</span>
-                            </button>
-                            <button type="button" class="btn-action-icon btn-cat-move-down" data-id="${cat.id}" title="Move Order Down" aria-label="Move Order Down">
-                                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
-                                <span>Down</span>
-                            </button>
-                            <button type="button" class="btn-action-icon btn-edit-category" data-id="${cat.id}" title="Edit Category">
-                                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-                                <span>Edit</span>
-                            </button>
-                            <button type="button" class="btn-action-icon danger btn-delete-category" data-id="${cat.id}" title="Delete Category">
-                                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+                            <button type="button" class="btn-cat-action btn-cat-action-delete btn-delete-category" data-id="${cat.id}" title="Delete Category" aria-label="Delete Category">
+                                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
                                 <span>Delete</span>
                             </button>
                         </div>
@@ -542,7 +547,7 @@ function openDeleteCategoryModal(category) {
 
     if (titleEl) titleEl.textContent = category.name;
     if (countEl) countEl.textContent = `${category.product_count} Product(s)`;
-    if (thumbEl) {
+    if (thumbEl && thumbEl.tagName === 'IMG') {
         thumbEl.src = category.image_url || '../images/hero/hero_furniture.png';
         thumbEl.onerror = () => { thumbEl.src = '../images/hero/hero_furniture.png'; };
     }
