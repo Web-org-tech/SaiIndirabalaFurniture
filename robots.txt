@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
 
 # Sitemap Location
-Sitemap: https://saiindirabalafurniture.com/sitemap.xml
+Sitemap: https://saiindirabala.in/sitemap.xml

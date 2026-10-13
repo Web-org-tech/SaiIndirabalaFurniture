@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management Dashboard | Sai Indirabala Furniture</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="../images/icon/logo.png">
+
+    <script>
+        // Ensure trailing slash for directory route so relative asset paths resolve reliably
+        if (window.location.pathname.endsWith('/admin')) {
+            window.location.replace(window.location.pathname + '/' + window.location.search + window.location.hash);
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Admin Stylesheet Mapping -->
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="css/admin.css">
+
+    <!-- Supabase JS SDK (High-Reliability Preload) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="admin-body guard-loading">
+
+    <!-- Guard Security Loader -->
+    <div id="admin-guard-loader" aria-live="assertive" aria-label="Verifying administrator session">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Verifying Administrator Access...</div>
+    </div>
+
+    <!-- Mobile Sidebar Drawer Backdrop -->
+    <div id="sidebar-backdrop"></div>
+
+    <!-- Protected Application Shell -->
+    <div id="admin-app-shell" class="dashboard-layout">
+        
+        <!-- Sidebar Navigation -->
+        <aside id="admin-sidebar" class="admin-sidebar" role="navigation" aria-label="Admin Navigation">
+            <div class="sidebar-header">
+                <a href="dashboard.html" class="sidebar-brand">
+                    <img src="../images/icon/logo.png" alt="Logo" class="sidebar-brand-img" width="36" height="36">
+                    <div>
+                        <div class="sidebar-brand-title">SAI INDIRABALA</div>
+                        <div class="sidebar-brand-sub">Admin Portal</div>
+                    </div>
+                </a>
+                <button type="button" id="sidebar-close-btn" class="sidebar-close-btn" aria-label="Close navigation sidebar">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                </button>
+            </div>
+
+            <!-- Mobile-Visible Admin Profile Card in Sidebar -->
+            <div class="sidebar-user-card" id="sidebar-user-card">
+                <div class="sidebar-user-avatar" id="sidebar-avatar-initials">AD</div>
+                <div class="sidebar-user-details">
+                    <span class="sidebar-user-email" id="sidebar-user-email">Loading...</span>
+                    <span class="role-badge role-standard" id="sidebar-user-role">Admin</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#overview" class="sidebar-nav-item active" data-view="view-overview">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- Expandable Catalog Group -->
+                <div class="sidebar-nav-group open" id="nav-group-catalog">
+                    <button type="button" class="sidebar-group-header" id="btn-toggle-catalog-group" aria-expanded="true" aria-controls="catalog-sub-nav">
+                        <span class="group-header-label">
+                            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                            <span class="nav-label">Catalog</span>
+                        </span>
+                        <svg class="group-arrow-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="sidebar-sub-items" id="catalog-sub-nav">
+                        <a href="#categories" class="sidebar-nav-item sub-item" data-view="view-categories">
+                            <span class="sub-dot"></span>
+                            <span class="nav-label">Categories</span>
+                        </a>
+                        <a href="#products" class="sidebar-nav-item sub-item" data-view="view-products">
+                            <span class="sub-dot"></span>
+                            <span class="nav-label">Products</span>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="#banners" class="sidebar-nav-item" data-view="view-banners">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                    <span class="nav-label">Hero Banners</span>
+                </a>
+
+                <a href="#gallery" class="sidebar-nav-item" data-view="view-gallery">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    <span class="nav-label">Our Work</span>
+                </a>
+
+                <a href="#enquiries" class="sidebar-nav-item" data-view="view-enquiries">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <span class="nav-label">Enquiries</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="../index.html" class="btn-sidebar-website" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    <span>View Public Website</span>
+                </a>
+                <button type="button" class="btn-sidebar-logout action-logout-btn">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                    <span>Sign Out</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Panel -->
+        <div class="admin-main">
+            <!-- Header Bar -->
+            <header class="admin-header">
+                <div class="header-left">
+                    <button type="button" id="admin-mobile-back-btn" class="mobile-back-btn" aria-label="Back to dashboard overview" style="display: none;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button type="button" id="admin-menu-toggle" class="menu-toggle-btn" aria-label="Toggle navigation menu">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                    </button>
+                    <h2 id="current-section-title" class="header-title">Dashboard</h2>
+                </div>
+
+                <div class="header-right">
+                    <!-- Desktop User Profile Badge -->
+                    <div class="user-profile-badge desktop-only-flex">
+                        <div id="admin-avatar-initials" class="user-avatar">AD</div>
+                        <div class="user-info">
+                            <span id="admin-user-email" class="user-email-text">Loading...</span>
+                            <span id="admin-user-role" class="role-badge role-standard">Admin</span>
+                        </div>
+                    </div>
+
+                    <a href="../index.html" class="btn btn-secondary desktop-only-inline-flex" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;" target="_blank" rel="noopener">
+                        <span>View Website</span>
+                    </a>
+
+                    <!-- Mobile Quick Action: View Website Icon Button -->
+                    <a href="../index.html" class="header-mobile-icon-btn mobile-only-inline-flex" title="View Public Website" target="_blank" rel="noopener" aria-label="View public website">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </a>
+
+                    <!-- Mobile Profile Avatar Trigger Button -->
+                    <button type="button" id="admin-mobile-profile-toggle" class="header-mobile-avatar-btn mobile-only-inline-flex" aria-label="Open administrator profile and menu">
+                        <span id="admin-avatar-initials-mobile" class="user-avatar-sm">AD</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- ── VIEW 01: OVERVIEW (SIMPLIFIED CONTENT SUMMARY DASHBOARD) ───────── -->
+            <section id="view-overview" class="admin-view-panel active">
+                <!-- Clean Minimal Header -->
+                <div class="overview-header-bar">
+                    <div class="overview-header-title-wrap">
+                        <h3 class="overview-title">Dashboard Overview</h3>
+                        <p class="overview-subtitle">Real-time content summary for Sai Indirabala Furniture &amp; Interiors</p>
+                    </div>
+                    <div class="overview-header-actions">
+                        <div class="live-sync-pill" title="Live database synchronization active">
+                            <span class="live-dot"></span>
+                            <span>Live Sync</span>
+                        </div>
+                        <span class="last-updated-text" id="overview-last-updated">Connected</span>
+                        <button type="button" id="btn-refresh-overview" class="btn btn-secondary btn-sm" aria-label="Refresh Dashboard Metrics">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                            <span>Refresh</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Error Notice (Hidden by default) -->
+                <div id="overview-error-banner" class="overview-error-banner" style="display: none;" role="alert">
+                    <div class="error-content">
+                        <span>⚠️ Failed to fetch metrics from Supabase.</span>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-secondary" id="btn-retry-overview">Retry</button>
+                </div>
+
+                <!-- ── ESSENTIAL COMPACT SUMMARY CARDS ────────────────────── -->
+                <div class="summary-cards-grid">
+                    <!-- Card 1: Categories -->
+                    <div class="summary-card" id="kpi-card-categories" role="button" tabindex="0" title="Click to manage Categories">
+                        <div class="summary-card-top">
+                            <span class="summary-card-title">Categories</span>
+                            <div class="summary-icon-wrap icon-wood">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h7"/></svg>
+                            </div>
+                        </div>
+                        <div class="summary-count" id="kpi-total-categories">--</div>
+                        <div class="summary-card-bottom">
+                            <span class="summary-pill pill-published"><strong id="kpi-published-categories">0</strong> published</span>
+                            <span class="summary-arrow">→</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Products -->
+                    <div class="summary-card" id="kpi-card-products" role="button" tabindex="0" title="Click to manage Products">
+                        <div class="summary-card-top">
+                            <span class="summary-card-title">Products</span>
+                            <div class="summary-icon-wrap icon-forest">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                            </div>
+                        </div>
+                        <div class="summary-count" id="kpi-total-products">--</div>
+                        <div class="summary-card-bottom">
+                            <span class="summary-pill pill-published"><strong id="kpi-published-products">0</strong> published</span>
+                            <span class="summary-arrow">→</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Our Work Gallery -->
+                    <div class="summary-card" id="kpi-card-gallery" role="button" tabindex="0" title="Click to manage Our Work portfolio">
+                        <div class="summary-card-top">
+                            <span class="summary-card-title">Our Work</span>
+                            <div class="summary-icon-wrap icon-purple">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            </div>
+                        </div>
+                        <div class="summary-count" id="kpi-total-gallery">--</div>
+                        <div class="summary-card-bottom">
+                            <span class="summary-pill pill-published"><strong id="kpi-published-gallery">0</strong> published</span>
+                            <span class="summary-arrow">→</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Hero Banners -->
+                    <div class="summary-card" id="kpi-card-banners" role="button" tabindex="0" title="Click to manage Hero Banners">
+                        <div class="summary-card-top">
+                            <span class="summary-card-title">Hero Banners</span>
+                            <div class="summary-icon-wrap icon-blue">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                            </div>
+                        </div>
+                        <div class="summary-count" id="kpi-total-banners">--</div>
+                        <div class="summary-card-bottom">
+                            <span class="summary-pill pill-published"><strong id="kpi-published-banners">0</strong> published</span>
+                            <span class="summary-arrow">→</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Consultation Enquiries -->
+                    <div class="summary-card" id="kpi-card-enquiries" role="button" tabindex="0" title="Click to manage Consultation Enquiries">
+                        <div class="summary-card-top">
+                            <span class="summary-card-title">Enquiries</span>
+                            <div class="summary-icon-wrap icon-amber">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            </div>
+                        </div>
+                        <div class="summary-count" id="kpi-total-enquiries">--</div>
+                        <div class="summary-card-bottom">
+                            <span class="summary-pill pill-published"><strong id="kpi-new-enquiries">0</strong> new</span>
+                            <span class="summary-arrow">→</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── VIEW 02: CATEGORIES (CMS MODULE) ──────────────────────── -->
+            <section id="view-categories" class="admin-view-panel">
+                <div class="module-header-row">
+                    <div>
+                        <h3 class="module-headline">Category Management</h3>
+                        <p class="module-subheadline">
+                            Manage furniture &amp; interior service categories, slugs, descriptions, and sort order for the catalog.
+                        </p>
+                    </div>
+                    <div class="module-header-actions">
+                        <button type="button" id="btn-refresh-categories" class="btn btn-secondary btn-icon-only" title="Refresh Categories" aria-label="Refresh Categories">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                        </button>
+                        <button type="button" id="btn-open-add-category-modal" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 6px;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                            <span>Add New Category</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats Bar -->
+                <div class="banners-stat-bar">
+                    <div class="stat-pill">
+                        <span class="stat-label">Total Categories:</span>
+                        <strong id="stat-total-categories" class="stat-value">0</strong>
+                    </div>
+                    <div class="stat-pill stat-pill-published">
+                        <span class="stat-label">Published:</span>
+                        <strong id="stat-published-categories" class="stat-value">0</strong>
+                    </div>
+                    <div class="stat-pill stat-pill-draft">
+                        <span class="stat-label">Draft / Hidden:</span>
+                        <strong id="stat-draft-categories" class="stat-value">0</strong>
+                    </div>
+                </div>
+
+                <!-- Filter & Search Bar -->
+                <div class="catalog-filter-bar">
+                    <div class="search-input-wrap">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        <input type="text" id="categories-search-input" class="search-input" placeholder="Search categories by name, slug, or description...">
+                    </div>
+                    <div class="filter-controls">
+                        <select id="categories-status-filter" class="filter-select">
+                            <option value="all">All Statuses</option>
+                            <option value="published">Published Only</option>
+                            <option value="draft">Drafts Only</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Notification Alert Banner -->
+                <div id="category-notification-box" class="admin-alert-banner" style="display: none;" role="alert">
+                    <span id="category-notification-text"></span>
+                    <button type="button" class="alert-close-btn" id="btn-close-category-notification" aria-label="Dismiss alert">&times;</button>
+                </div>
+
+                <!-- Categories Grid Container -->
+                <div id="categories-list-container" class="banners-grid-wrapper">
+                    <!-- Injected by categories.js -->
+                </div>
+            </section>
+
+            <!-- ── VIEW 03: PRODUCTS (CMS MODULE) ────────────────────────── -->
+            <section id="view-products" class="admin-view-panel">
+                <div class="module-header-row">
+                    <div>
+                        <h3 class="module-headline">Product Catalog Management</h3>
+                        <p class="module-subheadline">
+                            Manage products under categories, specifications, gallery image collections, and catalog visibility.
+                        </p>
+                    </div>
+                    <div class="module-header-actions">
+                        <button type="button" id="btn-refresh-products" class="btn btn-secondary btn-icon-only" title="Refresh Products" aria-label="Refresh Products">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                        </button>
+                        <button type="button" id="btn-open-add-product-modal" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 6px;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                            <span>Add New Product</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats Bar -->
+                <div class="banners-stat-bar">
+                    <div class="stat-pill">
+                        <span class="stat-label">Total Products:</span>
+                        <strong id="stat-total-products" class="stat-value">0</strong>
+                    </div>
+                    <div class="stat-pill stat-pill-published">
+                        <span class="stat-label">Published:</span>
+                        <strong id="stat-published-products" class="stat-value">0</strong>
+                    </div>
+                    <div class="stat-pill stat-pill-draft">
+                        <span class="stat-label">Draft / Hidden:</span>
+                        <strong id="stat-draft-products" class="stat-value">0</strong>
+                    </div>
+                </div>
+
+                <!-- Filter & Search Bar -->
+                <div class="catalog-filter-bar">
+                    <div class="search-input-wrap">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        <input type="text" id="products-search-input" class="search-input" placeholder="Search products by name, slug, or category...">
+                    </div>
+                    <div class="filter-controls">
+                        <select id="products-category-filter" class="filter-select">
+                            <option value="all">All Categories</option>
+                        </select>
+                        <select id="products-status-filter" class="filter-select">
+                            <option value="all">All Statuses</option>
+                            <option value="published">Published Only</option>
+                            <option value="draft">Drafts Only</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Notification Alert Banner -->
+                <div id="product-notification-box" class="admin-alert-banner" style="display: none;" role="alert">
+                    <span id="product-notification-text"></span>
+                    <button type="button" class="alert-close-btn" id="btn-close-product-notification" aria-label="Dismiss alert">&times;</button>
+                </div>
+
+                <!-- Products Grid Container -->
+                <div id="products-list-container" class="banners-grid-wrapper">
+                    <!-- Injected by products.js -->
+                </div>
+            </section>
+
+            <!-- ── VIEW 04: HERO BANNERS (CMS MODULE) ────────────────────── -->
+            <section id="view-banners" class="admin-view-panel">
+                <div class="module-header-row">
+                    <div>
+                        <h3 class="module-headline">Hero Banners Showcase</h3>
+                        <p class="module-subheadline">
+                            Manage visuals rotating on the homepage hero section. Follows the 0/1/many engine: 0 = local fallback render, 1 = static banner, 2+ = infinite circular carousel.
+                        </p>
+                    </div>
+                    <div class="module-header-actions">
+                        <button type="button" id="btn-refresh-banners" class="btn btn-secondary btn-icon-only" title="Refresh Banners List" aria-label="Refresh Banners List">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                        </button>
+                        <button type="button" id="btn-open-add-banner-modal" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 6px;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                            <span>Add New Banner</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats / Filter Bar -->
+                <div class="banners-stat-bar">
+                    <div class="stat-pill">
+                        <span class="stat-label">Total Banners:</span>
+                        <strong id="stat-total-banners" class="stat-value">0</strong>
+                    </div>
+                    <div class="stat-pill stat-pill-published">
+                        <span class="stat-label">Published (Live):</span>
+                        <strong id="stat-published-banners" class="stat-value">0</strong>
+                    </div>
+                    <div class="stat-pill stat-pill-draft">
+                        <span class="stat-label">Draft / Hidden:</span>
+                        <strong id="stat-draft-banners" class="stat-value">0</strong>
+                    </div>
+                    <div class="stat-mode-badge" id="stat-engine-mode">
+                        Current Engine Mode: <strong>0 (Fallback)</strong>
+                    </div>
+                </div>
+
+                <!-- Notification Alert Banner -->
+                <div id="banner-notification-box" class="admin-alert-banner" style="display: none;" role="alert">
+                    <span id="banner-notification-text"></span>
+                    <button type="button" class="alert-close-btn" id="btn-close-notification" aria-label="Dismiss alert">&times;</button>
+                </div>
+
+                <!-- Banners List / Grid Container -->
+                <div id="banners-list-container" class="banners-grid-wrapper">
+                    <!-- Dynamic cards or empty/loading state injected by banners.js -->
+                </div>
+            </section>
+
+            <!-- ── VIEW 05: GALLERY (PLACEHOLDER) ─────────────────────────── -->
+            <!-- ── VIEW 05: GALLERY (CMS MODULE) ─────────────────────────── -->
+            <section id="view-gallery" class="admin-view-panel">
+                <div class="module-header-row">
+                    <div>
+                        <h3 class="module-headline">Our Work Gallery Management</h3>
+                        <p class="module-subheadline">
+                            Manage real-site portfolio photographs, room category tags, descriptions, and gallery display orders.
+                        </p>
+                    </div>
+                    <div class="module-header-actions">
+                        <button type="button" id="btn-refresh-gallery" class="btn btn-secondary btn-icon-only" title="Refresh Gallery" aria-label="Refresh Gallery">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                        </button>
+                        <button type="button" id="btn-open-add-gallery-modal" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 6px;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                            <span>Add New Project</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats Bar -->
+                <div class="banners-stat-bar">
+                    <div class="stat-pill">
+                        <span class="stat-label">Total Projects:</span>
+                        <strong id="stat-total-gallery" class="stat-value">0</strong>
+                    </div>
+                    <div class="stat-pill stat-pill-published">
+                        <span class="stat-label">Published:</span>
+                        <strong id="stat-published-gallery" class="stat-value">0</strong>
+                    </div>
+                    <div class="stat-pill stat-pill-draft">
+                        <span class="stat-label">Draft / Hidden:</span>
+                        <strong id="stat-draft-gallery" class="stat-value">0</strong>
+                    </div>
+                </div>
+
+                <!-- Filter & Search Bar -->
+                <div class="catalog-filter-bar">
+                    <div class="search-input-wrap">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        <input type="text" id="gallery-search-input" class="search-input" placeholder="Search projects by title, category, or description...">
+                    </div>
+                    <div class="filter-controls">
+                        <select id="gallery-category-filter" class="filter-select">
+                            <option value="all">All Categories</option>
+                        </select>
+                        <select id="gallery-status-filter" class="filter-select">
+                            <option value="all">All Statuses</option>
+                            <option value="published">Published Only</option>
+                            <option value="draft">Drafts Only</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Notification Alert Banner -->
+                <div id="gallery-notification-box" class="admin-alert-banner" style="display: none;" role="alert">
+                    <span id="gallery-notification-text"></span>
+                    <button type="button" class="alert-close-btn" id="btn-close-gallery-notification" aria-label="Dismiss alert">&times;</button>
+                </div>
+
+                <!-- Gallery Grid Container -->
+                <div id="gallery-list-container" class="banners-grid-wrapper">
+                    <!-- Injected by gallery.js -->
+                </div>
+            </section>
+
+            <!-- ── VIEW 06: ENQUIRIES (CMS MODULE) ───────────────────────── -->
+            <section id="view-enquiries" class="admin-view-panel">
+                <div class="module-header-row">
+                    <div>
+                        <h3 class="module-headline">Consultation Enquiries Inbox</h3>
+                        <p class="module-subheadline">
+                            Real-time customer consultation requests captured from website forms. Strictly confidential.
+                        </p>
+                    </div>
+                    <div class="module-header-actions">
+                        <button type="button" id="btn-refresh-enquiries" class="btn btn-secondary btn-icon-only" title="Refresh Enquiries" aria-label="Refresh Enquiries">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats Bar -->
+                <div class="banners-stat-bar">
+                    <div class="stat-pill">
+                        <span class="stat-label">Total Enquiries:</span>
+                        <strong id="stat-total-enquiries" class="stat-value">0</strong>
+                    </div>
+                    <div class="stat-pill" style="background: #dbeafe; color: #1e40af;">
+                        <span class="stat-label">New Leads:</span>
+                        <strong id="stat-new-enquiries" class="stat-value">0</strong>
+                    </div>
+                    <div class="stat-pill" style="background: #f3e8ff; color: #6b21a8;">
+                        <span class="stat-label">In Progress:</span>
+                        <strong id="stat-inprogress-enquiries" class="stat-value">0</strong>
+                    </div>
+                    <div class="stat-pill stat-pill-published">
+                        <span class="stat-label">Converted:</span>
+                        <strong id="stat-converted-enquiries" class="stat-value">0</strong>
+                    </div>
+                </div>
+
+                <!-- Filter & Search Bar -->
+                <div class="catalog-filter-bar">
+                    <div class="search-input-wrap">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        <input type="text" id="enquiries-search-input" class="search-input" placeholder="Search by customer name, phone, or email...">
+                    </div>
+                    <div class="filter-controls">
+                        <select id="enquiries-status-filter" class="filter-select">
+                            <option value="all">All Statuses</option>
+                            <option value="new">New Leads</option>
+                            <option value="contacted">Contacted</option>
+                            <option value="in_progress">In Progress</option>
+                            <option value="converted">Converted</option>
+                            <option value="closed">Closed</option>
+                            <option value="spam">Spam / Junk</option>
+                        </select>
+                        <select id="enquiries-service-filter" class="filter-select">
+                            <option value="all">All Service Types</option>
+                        </select>
+                        <select id="enquiries-sort-order" class="filter-select">
+                            <option value="desc">Newest First</option>
+                            <option value="asc">Oldest First</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Notification Alert Banner -->
+                <div id="enquiry-notification-box" class="admin-alert-banner" style="display: none;" role="alert">
+                    <span id="enquiry-notification-text"></span>
+                    <button type="button" class="alert-close-btn" id="btn-close-enquiry-notification" aria-label="Dismiss alert">&times;</button>
+                </div>
+
+                <!-- Enquiries List / Table Container -->
+                <div id="enquiries-list-container" class="banners-grid-wrapper">
+                    <!-- Injected by enquiries.js -->
+                </div>
+            </section>
+
+            <!-- ── CONSISTENT ADMIN FOOTER (DESKTOP & NON-FIXED VIEWPORTS) ─ -->
+            <footer class="admin-footer">
+                <div class="admin-footer-inner">
+                    <div class="admin-footer-brand">
+                        <div class="footer-brand-title">Sai Indirabala Furniture &amp; Interiors</div>
+                        <div class="footer-brand-desc">Master Woodcraft &bull; Modular Interiors &bull; 3D Execution</div>
+                        <div class="footer-copyright">&copy; <span id="admin-footer-year">2026</span> Sai Indirabala Furniture. All rights reserved.</div>
+                        <div class="footer-status-pill">
+                            <span class="status-pulse-dot"></span>
+                            <span>System Operational &bull; Supabase Live</span>
+                        </div>
+                    </div>
+                    <div class="admin-footer-links">
+                        <span class="footer-links-heading">Dashboard Quick Links</span>
+                        <div class="footer-links-grid">
+                            <a href="#overview" class="admin-footer-link" data-view="view-overview">Overview</a>
+                            <a href="#banners" class="admin-footer-link" data-view="view-banners">Hero Banners</a>
+                            <a href="#categories" class="admin-footer-link" data-view="view-categories">Categories</a>
+                            <a href="#products" class="admin-footer-link" data-view="view-products">Products</a>
+                            <a href="#gallery" class="admin-footer-link" data-view="view-gallery">Our Work</a>
+                            <a href="#enquiries" class="admin-footer-link" data-view="view-enquiries">Enquiries</a>
+                        </div>
+                    </div>
+                    <div class="admin-footer-actions">
+                        <a href="../index.html" class="btn btn-secondary btn-sm footer-action-btn footer-btn-website" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            <span>View Public Website</span>
+                        </a>
+                        <button type="button" class="btn btn-secondary btn-sm footer-action-btn footer-btn-logout action-logout-btn">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                            <span>Sign Out</span>
+                        </button>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- ── MOBILE FIVE-ITEM FIXED BOTTOM NAVIGATION ────────────────────────── -->
+    <nav class="admin-mobile-bottom-nav" id="admin-bottom-nav" aria-label="Mobile Navigation">
+        <button type="button" class="bottom-nav-item active" data-view="view-overview" id="bnav-overview" aria-label="Overview Dashboard">
+            <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            <span class="bottom-nav-label">Dashboard</span>
+        </button>
+        <button type="button" class="bottom-nav-item" data-view="view-banners" id="bnav-banners" aria-label="Hero Banners Management">
+            <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            <span class="bottom-nav-label">Banners</span>
+        </button>
+        <button type="button" class="bottom-nav-item" data-view="view-categories" id="bnav-catalog" aria-label="Furniture & Room Catalog">
+            <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            <span class="bottom-nav-label">Catalog</span>
+        </button>
+        <button type="button" class="bottom-nav-item" data-view="view-gallery" id="bnav-gallery" aria-label="Our Work Portfolio Projects">
+            <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span class="bottom-nav-label">Projects</span>
+        </button>
+        <button type="button" class="bottom-nav-item" id="bnav-more" aria-haspopup="dialog" aria-expanded="false" aria-label="More navigation modules">
+            <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1.5"></circle><circle cx="19" cy="12" r="1.5"></circle><circle cx="5" cy="12" r="1.5"></circle></svg>
+            <span class="bottom-nav-label">More</span>
+        </button>
+    </nav>
+
+    <!-- ── FLOATING CATALOG SELECTION POPOVER (MOBILE SPEED DIAL) ──────────── -->
+    <div id="catalog-choice-popover" class="catalog-choice-popover" style="display: none;" role="menu" aria-label="Catalog Options">
+        <div class="catalog-choice-card">
+            <div class="catalog-choice-header">
+                <span class="catalog-choice-title">Catalog Sections</span>
+                <span class="catalog-choice-sub">Choose a section to manage</span>
+            </div>
+            <div class="catalog-choice-buttons">
+                <button type="button" class="catalog-choice-item" id="choice-btn-categories" role="menuitem">
+                    <div class="choice-icon-wrap icon-categories">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h7"/></svg>
+                    </div>
+                    <div class="choice-text-wrap">
+                        <strong class="choice-name">Categories</strong>
+                        <span class="choice-desc">Furniture &amp; room categories</span>
+                    </div>
+                    <svg class="choice-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+                <button type="button" class="catalog-choice-item" id="choice-btn-products" role="menuitem">
+                    <div class="choice-icon-wrap icon-products">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                    </div>
+                    <div class="choice-text-wrap">
+                        <strong class="choice-name">Products</strong>
+                        <span class="choice-desc">Furniture items, specs &amp; gallery</span>
+                    </div>
+                    <svg class="choice-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+            </div>
+            <div class="catalog-choice-pointer"></div>
+        </div>
+    </div>
+    <div id="catalog-choice-backdrop" class="catalog-choice-backdrop" style="display: none;"></div>
+
+    <!-- ── MOBILE MORE ACTIONS SHEET / MODAL ──────────────────────────────── -->
+    <div id="mobile-more-sheet" class="mobile-more-sheet" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="more-sheet-title">
+        <div class="mobile-more-backdrop" id="more-sheet-backdrop"></div>
+        <div class="mobile-more-content">
+            <div class="mobile-more-drag-handle"></div>
+            <div class="mobile-more-header">
+                <h3 id="more-sheet-title" class="mobile-more-title">More Modules &amp; Tools</h3>
+                <button type="button" class="mobile-more-close" id="btn-close-more-sheet" aria-label="Close menu">&times;</button>
+            </div>
+            <div class="mobile-more-body">
+                <div class="mobile-more-grid">
+                    <button type="button" class="mobile-more-tile" data-view="view-enquiries" id="sheet-tile-enquiries">
+                        <div class="tile-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div class="tile-meta">
+                            <strong>Enquiries</strong>
+                            <span>Customer Leads</span>
+                        </div>
+                    </button>
+                    <button type="button" class="mobile-more-tile" data-view="view-products" id="sheet-tile-products">
+                        <div class="tile-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                        </div>
+                        <div class="tile-meta">
+                            <strong>Products</strong>
+                            <span>Furniture Catalog</span>
+                        </div>
+                    </button>
+                    <button type="button" class="mobile-more-tile" data-view="view-categories" id="sheet-tile-categories">
+                        <div class="tile-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h7"/></svg>
+                        </div>
+                        <div class="tile-meta">
+                            <strong>Categories</strong>
+                            <span>Room Types &amp; Slugs</span>
+                        </div>
+                    </button>
+                    <a href="../index.html" class="mobile-more-tile" target="_blank" rel="noopener">
+                        <div class="tile-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </div>
+                        <div class="tile-meta">
+                            <strong>View Website</strong>
+                            <span>Open Public Site ↗</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="mobile-more-user-info">
+                    <div class="more-user-avatar" id="more-sheet-avatar">AD</div>
+                    <div class="more-user-details">
+                        <div class="more-user-email" id="more-sheet-email">admin@saiindirabala.in</div>
+                        <div class="more-user-role-wrap">
+                            <span class="role-badge role-standard" id="more-sheet-role">Admin</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-secondary action-logout-btn mobile-more-logout">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                    <span>Sign Out from Admin</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── ADD / EDIT BANNER MODAL ─────────────────────────────────────── -->
+    <div id="banner-form-modal" class="admin-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="banner-modal-title">
+        <div class="admin-modal-backdrop" id="banner-modal-backdrop"></div>
+        <div class="admin-modal-content">
+            <div class="admin-modal-header">
+                <h3 id="banner-modal-title" class="admin-modal-title">Add Hero Banner</h3>
+                <button type="button" class="modal-close-btn" id="btn-close-banner-modal" aria-label="Close dialog">&times;</button>
+            </div>
+            <form id="banner-editor-form" class="admin-modal-body">
+                <input type="hidden" id="banner-field-id" value="">
+
+                <!-- Banner Image Device Picker & Dropzone -->
+                <div class="form-group">
+                    <label class="form-label required">Banner Photo (Device Upload)</label>
+                    <div class="image-dropzone-box" id="banner-dropzone" role="button" tabindex="0">
+                        <input type="file" id="banner-file-input" accept="image/jpeg,image/png,image/webp,image/gif" class="sr-only-input" aria-label="Select hero banner photo from device">
+                        <div class="dropzone-placeholder" id="banner-dropzone-placeholder">
+                            <div class="dropzone-icon">📷</div>
+                            <span class="dropzone-prompt"><strong>Tap to choose photo</strong> or drag &amp; drop</span>
+                            <span class="dropzone-hint">Supports JPEG, PNG, WebP (Max 5MB)</span>
+                        </div>
+                        <div class="dropzone-preview-wrap" id="banner-preview-wrap" style="display: none;">
+                            <img id="banner-preview-img" src="" alt="Selected Banner Preview" class="dropzone-preview-image">
+                            <div class="preview-overlay-info">
+                                <span class="upload-filename-badge" id="banner-filename-badge"></span>
+                                <button type="button" id="banner-clear-image-btn" class="btn-clear-image" title="Remove selected image">✕ Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Optional fallback URL toggle -->
+                    <div class="fallback-url-toggle-wrap">
+                        <button type="button" id="banner-fallback-toggle-btn" class="btn-text-link">▼ Or paste image URL</button>
+                        <div id="banner-fallback-wrap" style="display: none; margin-top: 0.5rem;">
+                            <input type="url" id="banner-field-image-url" class="form-input" placeholder="https://..." autocomplete="off">
+                            <span class="form-help">Optional direct image URL link if offline.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="banner-field-title" class="form-label">Overlay Title (Optional)</label>
+                    <input type="text" id="banner-field-title" class="form-input" maxlength="120" placeholder="e.g. 100% Custom Execution">
+                    <span class="form-help">Appears inside the hero floating glass card (max 120 characters).</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="banner-field-subtitle" class="form-label">Overlay Subtitle (Optional)</label>
+                    <textarea id="banner-field-subtitle" class="form-textarea" rows="2" maxlength="250" placeholder="e.g. High-quality artificial boards, durable finishes, and precision metal fittings."></textarea>
+                    <span class="form-help">Secondary description inside the floating card (max 250 characters).</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">CTA Button Label &amp; Destination Link</label>
+                    <div class="spec-presets-bar" style="margin-bottom: 0.6rem;">
+                        <span style="font-size: 0.74rem; color: var(--charcoal-muted); margin-right: 4px;">Quick Presets:</span>
+                        <button type="button" class="btn-preset-pill btn-banner-preset-btn active" data-text="Get Free Consultation" data-link="#contact">
+                            Get Free Consultation (#contact)
+                        </button>
+                        <button type="button" class="btn-preset-pill btn-banner-preset-btn" data-text="View Our Work" data-link="#comparison">
+                            View Our Work (#comparison)
+                        </button>
+                        <button type="button" class="btn-preset-pill btn-banner-preset-btn" data-text="Explore Catalog" data-link="catalog.html">
+                            Explore Catalog (catalog.html)
+                        </button>
+                    </div>
+                    <div class="form-row-2col">
+                        <div>
+                            <input type="text" id="banner-field-button-text" class="form-input" maxlength="50" placeholder="e.g. Get Free Consultation" value="Get Free Consultation">
+                            <span class="form-help">Text on primary button (defaults to "Get Free Consultation").</span>
+                        </div>
+                        <div>
+                            <input type="text" id="banner-field-button-link" class="form-input" placeholder="e.g. #contact" value="#contact">
+                            <span class="form-help">Target link (e.g. #contact or catalog.html).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row-2col">
+                    <div class="form-group">
+                        <label for="banner-field-display-order" class="form-label required">Display Order</label>
+                        <input type="number" id="banner-field-display-order" class="form-input" value="0" min="0" max="999" required>
+                        <span class="form-help">Lower numbers display first (0, 1, 2...).</span>
+                    </div>
+                    <div class="form-group checkbox-group-wrap">
+                        <label class="form-checkbox-label">
+                            <input type="checkbox" id="banner-field-is-published" checked>
+                            <span class="checkbox-text">Publish to Homepage</span>
+                        </label>
+                        <span class="form-help">Uncheck to save as draft / hidden banner.</span>
+                    </div>
+                </div>
+
+                <div id="banner-form-error" class="form-error-alert" style="display: none;" role="alert"></div>
+
+                <div class="admin-modal-footer">
+                    <button type="button" class="btn btn-secondary" id="btn-cancel-banner-modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="btn-save-banner">
+                        <span id="btn-save-banner-text">Save Banner</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ── DELETE CONFIRMATION MODAL ───────────────────────────────────── -->
+    <div id="banner-delete-modal" class="admin-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="delete-modal-title">
+        <div class="admin-modal-backdrop" id="delete-modal-backdrop"></div>
+        <div class="admin-modal-content modal-content-sm">
+            <div class="admin-modal-header">
+                <h3 id="delete-modal-title" class="admin-modal-title">Delete Hero Banner</h3>
+                <button type="button" class="modal-close-btn" id="btn-close-delete-modal" aria-label="Close dialog">&times;</button>
+            </div>
+            <div class="admin-modal-body">
+                <div class="delete-warning-icon">⚠️</div>
+                <p class="delete-warning-text">Are you sure you want to permanently delete this hero banner? This action cannot be undone.</p>
+                <div class="delete-preview-item">
+                    <img id="delete-banner-thumb" src="" alt="Banner to delete" class="delete-thumb-img">
+                    <div class="delete-preview-meta">
+                        <strong id="delete-banner-title">Banner Title</strong>
+                        <span id="delete-banner-order">Order #0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="admin-modal-footer">
+                <button type="button" class="btn btn-secondary" id="btn-cancel-delete-modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="btn-confirm-delete-banner">
+                    <span id="btn-confirm-delete-text">Delete Banner</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── ADD / EDIT CATEGORY MODAL ─────────────────────────────────── -->
+    <div id="category-form-modal" class="admin-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="category-modal-title">
+        <div class="admin-modal-backdrop" id="category-modal-backdrop"></div>
+        <div class="admin-modal-content">
+            <div class="admin-modal-header">
+                <h3 id="category-modal-title" class="admin-modal-title">Add Category</h3>
+                <button type="button" class="modal-close-btn" id="btn-close-category-modal" aria-label="Close dialog">&times;</button>
+            </div>
+            <form id="category-editor-form" class="admin-modal-body">
+                <input type="hidden" id="category-field-id" value="">
+
+                <div class="form-group">
+                    <label for="category-field-name" class="form-label required">Category Name</label>
+                    <input type="text" id="category-field-name" class="form-input" required minlength="2" placeholder="e.g. Office Furniture" autocomplete="off">
+                    <span class="form-help">Web address slug will be generated automatically.</span>
+                </div>
+
+                <!-- Subtle Slug Preview / Edit Toggle -->
+                <div class="slug-auto-preview-wrap">
+                    <span class="slug-preview-text">URL Slug: <code id="category-slug-preview">auto-generated</code></span>
+                    <button type="button" id="btn-toggle-category-custom-slug" class="btn-text-link">Edit slug</button>
+                    <div id="category-custom-slug-wrap" style="display: none; margin-top: 0.4rem;">
+                        <input type="text" id="category-field-slug" class="form-input" placeholder="e.g. office-furniture" autocomplete="off">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="category-field-description" class="form-label">Description (Optional)</label>
+                    <textarea id="category-field-description" class="form-textarea" rows="2" maxlength="300" placeholder="e.g. Ergonomic workstations, conference tables, and executive desks."></textarea>
+                </div>
+
+                <!-- Category Image Device Upload -->
+                <div class="form-group">
+                    <label class="form-label">Category Photo (Optional Device Upload)</label>
+                    <div class="image-dropzone-box" id="category-dropzone" role="button" tabindex="0">
+                        <input type="file" id="category-file-input" accept="image/jpeg,image/png,image/webp,image/gif" class="sr-only-input" aria-label="Select category photo from device">
+                        <div class="dropzone-placeholder" id="category-dropzone-placeholder">
+                            <div class="dropzone-icon">📷</div>
+                            <span class="dropzone-prompt"><strong>Tap to choose photo</strong> or drag &amp; drop</span>
+                            <span class="dropzone-hint">Supports JPEG, PNG, WebP (Max 5MB)</span>
+                        </div>
+                        <div class="dropzone-preview-wrap" id="category-preview-wrap" style="display: none;">
+                            <img id="category-preview-img" src="" alt="Selected Category Preview" class="dropzone-preview-image">
+                            <div class="preview-overlay-info">
+                                <span class="upload-filename-badge" id="category-filename-badge"></span>
+                                <button type="button" id="category-clear-image-btn" class="btn-clear-image" title="Remove image">✕ Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fallback-url-toggle-wrap">
+                        <button type="button" id="category-fallback-toggle-btn" class="btn-text-link">▼ Or paste image URL</button>
+                        <div id="category-fallback-wrap" style="display: none; margin-top: 0.5rem;">
+                            <input type="url" id="category-field-image-url" class="form-input" placeholder="https://..." autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row-2col">
+                    <div class="form-group">
+                        <label for="category-field-display-order" class="form-label required">Display Order</label>
+                        <input type="number" id="category-field-display-order" class="form-input" value="0" min="0" max="999" required>
+                        <span class="form-help">Lower values display first (0, 1, 2...).</span>
+                    </div>
+                    <div class="form-group checkbox-group-wrap">
+                        <label class="form-checkbox-label">
+                            <input type="checkbox" id="category-field-is-published" checked>
+                            <span class="checkbox-text">Publish to Catalog</span>
+                        </label>
+                        <span class="form-help">Uncheck to save as draft / hidden category.</span>
+                    </div>
+                </div>
+
+                <div id="category-form-error" class="form-error-alert" style="display: none;" role="alert"></div>
+
+                <div class="admin-modal-footer">
+                    <button type="button" class="btn btn-secondary" id="btn-cancel-category-modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="btn-save-category">
+                        <span id="btn-save-category-text">Save Category</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ── DELETE CATEGORY MODAL (WITH ON DELETE RESTRICT CHECK) ────────── -->
+    <div id="category-delete-modal" class="admin-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="cat-del-modal-title">
+        <div class="admin-modal-backdrop" id="category-del-modal-backdrop"></div>
+        <div class="admin-modal-content modal-content-sm">
+            <div class="admin-modal-header">
+                <h3 id="cat-del-modal-title" class="admin-modal-title">Delete Category</h3>
+                <button type="button" class="modal-close-btn" id="btn-close-cat-del-modal" aria-label="Close dialog">&times;</button>
+            </div>
+            <div class="admin-modal-body">
+                <div id="delete-category-restrict-warning" class="restrict-warning-box" style="display: none;">
+                    <div class="restrict-warning-icon">⛔</div>
+                    <div class="restrict-warning-body">
+                        <div class="restrict-warning-title">Deletion Blocked (Foreign Key Restrict)</div>
+                        <div id="delete-category-restrict-desc" class="restrict-warning-desc"></div>
+                    </div>
+                </div>
+
+                <div class="delete-preview-item">
+                    <img id="delete-category-thumb" src="" alt="Category preview" class="delete-thumb-img">
+                    <div class="delete-preview-meta">
+                        <strong id="delete-category-name">Category Name</strong>
+                        <span id="delete-category-count">0 Products</span>
+                    </div>
+                </div>
+            </div>
+            <div class="admin-modal-footer">
+                <button type="button" class="btn btn-secondary" id="btn-cancel-cat-del-modal">Close</button>
+                <button type="button" class="btn btn-secondary" id="btn-manage-cat-products" style="display: none;">Go to Products</button>
+                <button type="button" class="btn btn-danger" id="btn-confirm-delete-category">
+                    <span id="btn-confirm-delete-cat-text">Delete Category</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── ADD / EDIT PRODUCT MODAL ────────────────────────────────────── -->
+    <div id="product-form-modal" class="admin-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="product-modal-title">
+        <div class="admin-modal-backdrop" id="product-modal-backdrop"></div>
+        <div class="admin-modal-content" style="max-width: 680px;">
+            <div class="admin-modal-header">
+                <h3 id="product-modal-title" class="admin-modal-title">Add Product</h3>
+                <button type="button" class="modal-close-btn" id="btn-close-product-modal" aria-label="Close dialog">&times;</button>
+            </div>
+            <form id="product-editor-form" class="admin-modal-body">
+                <input type="hidden" id="product-field-id" value="">
+
+                <div class="form-row-2col">
+                    <div class="form-group">
+                        <label for="product-field-category-id" class="form-label required">Category</label>
+                        <select id="product-field-category-id" class="form-input" required>
+                            <option value="">-- Select Category --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-field-name" class="form-label required">Product Name</label>
+                        <input type="text" id="product-field-name" class="form-input" required minlength="2" placeholder="e.g. Ergonomic Executive Workstation" autocomplete="off">
+                    </div>
+                </div>
+
+                <!-- Auto-Generated Slug Preview / Edit Toggle -->
+                <div class="slug-auto-preview-wrap">
+                    <span class="slug-preview-text">URL Slug: <code id="product-slug-preview">auto-generated</code></span>
+                    <button type="button" id="btn-toggle-product-custom-slug" class="btn-text-link">Edit slug</button>
+                    <div id="product-custom-slug-wrap" style="display: none; margin-top: 0.4rem;">
+                        <input type="text" id="product-field-slug" class="form-input" placeholder="e.g. ergonomic-executive-workstation" autocomplete="off">
+                    </div>
+                </div>
+
+                <!-- Primary Cover Photo (Device Upload) -->
+                <div class="form-group">
+                    <label class="form-label required">Primary Cover Photo (Device Upload)</label>
+                    <div class="image-dropzone-box" id="product-dropzone" role="button" tabindex="0">
+                        <input type="file" id="product-file-input" accept="image/jpeg,image/png,image/webp,image/gif" class="sr-only-input" aria-label="Select product cover photo from device">
+                        <div class="dropzone-placeholder" id="product-dropzone-placeholder">
+                            <div class="dropzone-icon">📷</div>
+                            <span class="dropzone-prompt"><strong>Tap to choose cover photo</strong> or drag &amp; drop</span>
+                            <span class="dropzone-hint">Supports JPEG, PNG, WebP (Max 5MB)</span>
+                        </div>
+                        <div class="dropzone-preview-wrap" id="product-preview-wrap" style="display: none;">
+                            <img id="product-preview-img" src="" alt="Selected Product Cover Preview" class="dropzone-preview-image">
+                            <div class="preview-overlay-info">
+                                <span class="upload-filename-badge" id="product-filename-badge"></span>
+                                <button type="button" id="product-clear-image-btn" class="btn-clear-image" title="Remove cover photo">✕ Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fallback-url-toggle-wrap">
+                        <button type="button" id="product-fallback-toggle-btn" class="btn-text-link">▼ Or paste cover image URL</button>
+                        <div id="product-fallback-wrap" style="display: none; margin-top: 0.5rem;">
+                            <input type="url" id="product-field-image-url" class="form-input" placeholder="https://..." autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Gallery Photos (Device Multi-Upload & Preview) -->
+                <div class="dynamic-builder-wrap">
+                    <div class="dynamic-builder-header">
+                        <span class="dynamic-builder-title">Additional Gallery Photos (Optional)</span>
+                    </div>
+                    <div id="product-gallery-thumbs-grid" class="gallery-thumbs-grid">
+                        <!-- Dynamic photo thumbnails with remove buttons injected by products.js -->
+                    </div>
+                    <div class="gallery-upload-actions-bar">
+                        <input type="file" id="product-gallery-file-input" accept="image/jpeg,image/png,image/webp,image/gif" multiple class="sr-only-input" aria-label="Choose additional gallery photos from device">
+                        <button type="button" id="btn-add-gallery-file" class="btn btn-secondary btn-sm">
+                            📷 + Choose Photos from Device
+                        </button>
+                        <button type="button" id="btn-toggle-gallery-url-input" class="btn-text-link" style="margin-left: 0.5rem;">
+                            Or add image URL
+                        </button>
+                    </div>
+                    <div id="product-gallery-url-wrap" style="display: none; margin-top: 0.5rem;">
+                        <div style="display: flex; gap: 0.5rem;">
+                            <input type="url" id="product-gallery-url-field" class="form-input" placeholder="https://..." autocomplete="off">
+                            <button type="button" id="btn-submit-gallery-url" class="btn btn-secondary btn-sm">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-field-short-desc" class="form-label">Short Summary (Optional)</label>
+                    <input type="text" id="product-field-short-desc" class="form-input" maxlength="200" placeholder="e.g. Heavy-duty steel frame with scratch-resistant melamine top.">
+                </div>
+
+                <div class="form-group">
+                    <label for="product-field-desc" class="form-label">Full Description (Optional)</label>
+                    <textarea id="product-field-desc" class="form-textarea" rows="2" placeholder="Detailed product specifications, customization options, and workshop craftsmanship highlights..."></textarea>
+                </div>
+
+                <!-- Specifications JSONB Builder -->
+                <div class="dynamic-builder-wrap">
+                    <div class="dynamic-builder-header">
+                        <span class="dynamic-builder-title">Product Specifications (Key &amp; Value)</span>
+                    </div>
+                    <div class="spec-presets-bar">
+                        <span style="font-size: 0.74rem; color: var(--charcoal-muted); margin-right: 4px;">Quick Presets:</span>
+                        <button type="button" class="btn-preset-pill" data-preset="Material">+ Material</button>
+                        <button type="button" class="btn-preset-pill" data-preset="Dimensions">+ Dimensions</button>
+                        <button type="button" class="btn-preset-pill" data-preset="Finish">+ Finish</button>
+                        <button type="button" class="btn-preset-pill" data-preset="Color">+ Color</button>
+                        <button type="button" class="btn-preset-pill" data-preset="Warranty">+ Warranty</button>
+                        <button type="button" class="btn-preset-pill" data-preset="Seating">+ Seating</button>
+                    </div>
+                    <div id="product-specs-rows-container">
+                        <!-- Dynamic rows injected by products.js -->
+                    </div>
+                    <button type="button" id="btn-add-spec-row" class="btn-add-row">+ Add Custom Specification</button>
+                </div>
+
+                <div class="form-row-2col">
+                    <div class="form-group">
+                        <label for="product-field-display-order" class="form-label required">Display Order</label>
+                        <input type="number" id="product-field-display-order" class="form-input" value="0" min="0" max="999" required>
+                        <span class="form-help">Lower values display first (0, 1, 2...).</span>
+                    </div>
+                    <div class="form-group checkbox-group-wrap">
+                        <label class="form-checkbox-label">
+                            <input type="checkbox" id="product-field-is-published" checked>
+                            <span class="checkbox-text">Publish to Catalog</span>
+                        </label>
+                        <span class="form-help">Uncheck to save as draft / hidden product.</span>
+                    </div>
+                </div>
+
+                <div id="product-form-error" class="form-error-alert" style="display: none;" role="alert"></div>
+
+                <div class="admin-modal-footer">
+                    <button type="button" class="btn btn-secondary" id="btn-cancel-product-modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="btn-save-product">
+                        <span id="btn-save-product-text">Save Product</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ── DELETE PRODUCT CONFIRMATION MODAL ───────────────────────────── -->
+    <div id="product-delete-modal" class="admin-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="prod-del-modal-title">
+        <div class="admin-modal-backdrop" id="product-del-modal-backdrop"></div>
+        <div class="admin-modal-content modal-content-sm">
+            <div class="admin-modal-header">
+                <h3 id="prod-del-modal-title" class="admin-modal-title">Delete Product</h3>
+                <button type="button" class="modal-close-btn" id="btn-close-prod-del-modal" aria-label="Close dialog">&times;</button>
+            </div>
+            <div class="admin-modal-body">
+                <div class="delete-warning-icon">⚠️</div>
+                <p class="delete-warning-text">Are you sure you want to permanently delete this product from the catalog? This action cannot be undone.</p>
+                <div class="delete-preview-item">
+                    <img id="delete-product-thumb" src="" alt="Product preview" class="delete-thumb-img">
+                    <div class="delete-preview-meta">
+                        <strong id="delete-product-name">Product Name</strong>
+                        <span id="delete-product-category">Category</span>
+                    </div>
+                </div>
+            </div>
+            <div class="admin-modal-footer">
+                <button type="button" class="btn btn-secondary" id="btn-cancel-prod-del-modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="btn-confirm-delete-product">
+                    <span id="btn-confirm-delete-prod-text">Delete Product</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── ADD / EDIT GALLERY PROJECT MODAL ─────────────────────────── -->
+    <div id="gallery-form-modal" class="admin-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="gallery-modal-title">
+        <div class="admin-modal-backdrop" id="gallery-modal-backdrop"></div>
+        <div class="admin-modal-content">
+            <div class="admin-modal-header">
+                <h3 id="gallery-modal-title" class="admin-modal-title">Upload Project Work</h3>
+                <button type="button" class="modal-close-btn" id="btn-close-gallery-modal" aria-label="Close dialog">&times;</button>
+            </div>
+            <form id="gallery-editor-form" class="admin-modal-body">
+                <input type="hidden" id="gallery-field-id" value="">
+
+                <!-- 01. Image-First: Top Device Upload Dropzone -->
+                <div class="form-group">
+                    <label class="form-label required">Project Photograph (Device Upload)</label>
+                    <div class="image-dropzone-box" id="gallery-dropzone" role="button" tabindex="0">
+                        <input type="file" id="gallery-file-input" accept="image/jpeg,image/png,image/webp,image/gif" class="sr-only-input" aria-label="Select portfolio project photo from device">
+                        <div class="dropzone-placeholder" id="gallery-dropzone-placeholder">
+                            <div class="dropzone-icon">📷</div>
+                            <span class="dropzone-prompt"><strong>Tap to choose project photo</strong> or drag &amp; drop</span>
+                            <span class="dropzone-hint">Supports JPEG, PNG, WebP (Max 5MB)</span>
+                        </div>
+                        <div class="dropzone-preview-wrap" id="gallery-preview-wrap" style="display: none;">
+                            <img id="gallery-preview-img" src="" alt="Selected Project Preview" class="dropzone-preview-image">
+                            <div class="preview-overlay-info">
+                                <span class="upload-filename-badge" id="gallery-filename-badge"></span>
+                                <button type="button" id="gallery-clear-image-btn" class="btn-clear-image" title="Remove photo">✕ Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fallback-url-toggle-wrap">
+                        <button type="button" id="gallery-fallback-toggle-btn" class="btn-text-link">▼ Or paste image URL</button>
+                        <div id="gallery-fallback-wrap" style="display: none; margin-top: 0.5rem;">
+                            <input type="url" id="gallery-field-image-url" class="form-input" placeholder="https://..." autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 02. Project Title -->
+                <div class="form-group">
+                    <label for="gallery-field-title" class="form-label required">Project Headline</label>
+                    <input type="text" id="gallery-field-title" class="form-input" required minlength="2" maxlength="120" placeholder="e.g. Director Cabin Setup, Madurai" autocomplete="off">
+                </div>
+
+                <!-- 03. Category Scope -->
+                <div class="form-group">
+                    <label for="gallery-field-category" class="form-label">Category / Space Type</label>
+                    <div class="spec-presets-bar">
+                        <span style="font-size: 0.74rem; color: var(--charcoal-muted); margin-right: 4px;">Quick Tags:</span>
+                        <button type="button" class="btn-preset-pill btn-gal-preset-pill" data-tag="Living Room">+ Living Room</button>
+                        <button type="button" class="btn-preset-pill btn-gal-preset-pill" data-tag="Modular Kitchen">+ Modular Kitchen</button>
+                        <button type="button" class="btn-preset-pill btn-gal-preset-pill" data-tag="Commercial Office">+ Office</button>
+                        <button type="button" class="btn-preset-pill btn-gal-preset-pill" data-tag="Institution">+ Institution</button>
+                    </div>
+                    <input type="text" id="gallery-field-category" class="form-input" placeholder="e.g. Living Room or Commercial Office" autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <label for="gallery-field-description" class="form-label">Project Description (Optional)</label>
+                    <textarea id="gallery-field-description" class="form-textarea" rows="2" maxlength="300" placeholder="Details regarding materials used, custom dimensions, or on-site craftsmanship highlights..."></textarea>
+                </div>
+
+                <div class="form-row-2col">
+                    <div class="form-group">
+                        <label for="gallery-field-display-order" class="form-label required">Display Order</label>
+                        <input type="number" id="gallery-field-display-order" class="form-input" value="0" min="0" max="999" required>
+                    </div>
+                    <div class="form-group checkbox-group-wrap">
+                        <label class="form-checkbox-label">
+                            <input type="checkbox" id="gallery-field-is-published" checked>
+                            <span class="checkbox-text">Publish to Showcase</span>
+                        </label>
+                        <span class="form-help">Uncheck to save as private draft.</span>
+                    </div>
+                </div>
+
+                <div id="gallery-form-error" class="form-error-alert" style="display: none;" role="alert"></div>
+
+                <div class="admin-modal-footer">
+                    <button type="button" class="btn btn-secondary" id="btn-cancel-gallery-modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="btn-save-gallery">
+                        <span id="btn-save-gallery-text">Save Project</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ── DELETE GALLERY PROJECT MODAL ────────────────────────────────── -->
+    <div id="gallery-delete-modal" class="admin-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="gal-del-modal-title">
+        <div class="admin-modal-backdrop" id="gallery-del-modal-backdrop"></div>
+        <div class="admin-modal-content modal-content-sm">
+            <div class="admin-modal-header">
+                <h3 id="gal-del-modal-title" class="admin-modal-title">Delete Project</h3>
+                <button type="button" class="modal-close-btn" id="btn-close-gal-del-modal" aria-label="Close dialog">&times;</button>
+            </div>
+            <div class="admin-modal-body">
+                <div class="delete-warning-icon">⚠️</div>
+                <p class="delete-warning-text">Are you sure you want to permanently delete this portfolio project photograph?</p>
+                <div class="delete-preview-item">
+                    <img id="delete-gallery-thumb" src="" alt="Project preview" class="delete-thumb-img">
+                    <div class="delete-preview-meta">
+                        <strong id="delete-gallery-title">Project Title</strong>
+                        <span id="delete-gallery-category">Category</span>
+                    </div>
+                </div>
+            </div>
+            <div class="admin-modal-footer">
+                <button type="button" class="btn btn-secondary" id="btn-cancel-gal-del-modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="btn-confirm-delete-gallery">
+                    <span id="btn-confirm-delete-gal-text">Delete Project</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── ENQUIRY DETAIL & CONTACT MODAL ──────────────────────────────── -->
+    <div id="enquiry-detail-modal" class="admin-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="enq-detail-modal-title">
+        <div class="admin-modal-backdrop" id="enquiry-detail-modal-backdrop"></div>
+        <div class="admin-modal-content" style="max-width: 650px;">
+            <div class="admin-modal-header">
+                <h3 id="enq-detail-modal-title" class="admin-modal-title">Consultation Lead Details</h3>
+                <button type="button" class="modal-close-btn" id="btn-close-enquiry-modal" aria-label="Close dialog">&times;</button>
+            </div>
+            <div class="admin-modal-body">
+                <div class="enquiry-detail-grid">
+                    <div class="enquiry-detail-item">
+                        <span class="enquiry-detail-label">Customer Name</span>
+                        <span id="enquiry-detail-name" class="enquiry-detail-value">—</span>
+                    </div>
+                    <div class="enquiry-detail-item">
+                        <span class="enquiry-detail-label">Phone Number</span>
+                        <span id="enquiry-detail-phone" class="enquiry-detail-value">—</span>
+                    </div>
+                    <div class="enquiry-detail-item">
+                        <span class="enquiry-detail-label">Email Address</span>
+                        <span id="enquiry-detail-email" class="enquiry-detail-value">—</span>
+                    </div>
+                    <div class="enquiry-detail-item">
+                        <span class="enquiry-detail-label">Service Type</span>
+                        <span id="enquiry-detail-service" class="enquiry-detail-value">—</span>
+                    </div>
+                    <div class="enquiry-detail-item">
+                        <span class="enquiry-detail-label">Date Submitted</span>
+                        <span id="enquiry-detail-date" class="enquiry-detail-value" style="font-size: 0.85rem;">—</span>
+                    </div>
+                    <div class="enquiry-detail-item">
+                        <span class="enquiry-detail-label">Submission ID</span>
+                        <span id="enquiry-detail-id" class="enquiry-detail-value" style="font-family: monospace; font-size: 0.76rem;">—</span>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="enquiry-detail-label" style="display: block; margin-bottom: 0.4rem;">Customer Message</span>
+                    <div id="enquiry-detail-message" class="enquiry-message-box"></div>
+                </div>
+
+                <div>
+                    <span class="enquiry-detail-label" style="display: block; margin-bottom: 0.4rem;">Direct Contact Actions</span>
+                    <div class="enquiry-contact-actions">
+                        <a id="enquiry-action-call" href="#" class="btn-contact-action btn-contact-call">
+                            📞 Call Customer
+                        </a>
+                        <a id="enquiry-action-whatsapp" href="#" target="_blank" rel="noopener" class="btn-contact-action btn-contact-whatsapp">
+                            💬 WhatsApp Chat
+                        </a>
+                        <a id="enquiry-action-email" href="#" class="btn-contact-action btn-contact-email">
+                            ✉️ Send Email
+                        </a>
+                    </div>
+                </div>
+
+                <div class="enquiry-status-selector-wrap">
+                    <span class="enquiry-detail-label" style="white-space: nowrap;">Lead Status:</span>
+                    <select id="enquiry-status-select" class="status-select-input">
+                        <!-- Populated dynamically -->
+                    </select>
+                    <button type="button" id="btn-save-enquiry-status" class="btn btn-primary" style="padding: 0.5rem 1rem;">
+                        Update Status
+                    </button>
+                </div>
+            </div>
+            <div class="admin-modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="document.getElementById('enquiry-detail-modal').style.display='none'; document.body.style.overflow='';">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── DELETE ENQUIRY CONFIRMATION MODAL ───────────────────────────── -->
+    <div id="enquiry-delete-modal" class="admin-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="enq-del-modal-title">
+        <div class="admin-modal-backdrop" id="enquiry-del-modal-backdrop"></div>
+        <div class="admin-modal-content modal-content-sm">
+            <div class="admin-modal-header">
+                <h3 id="enq-del-modal-title" class="admin-modal-title">Delete Enquiry Record</h3>
+                <button type="button" class="modal-close-btn" id="btn-close-enq-del-modal" aria-label="Close dialog">&times;</button>
+            </div>
+            <div class="admin-modal-body">
+                <div class="delete-warning-icon">⚠️</div>
+                <p class="delete-warning-text">Are you sure you want to permanently delete this customer enquiry record? This cannot be undone.</p>
+                <div class="delete-preview-item">
+                    <div class="delete-preview-meta">
+                        <strong id="delete-enquiry-customer">Customer Name</strong>
+                        <span id="delete-enquiry-phone">Phone Number</span>
+                    </div>
+                </div>
+            </div>
+            <div class="admin-modal-footer">
+                <button type="button" class="btn btn-secondary" id="btn-cancel-enq-del-modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="btn-confirm-delete-enquiry">
+                    <span id="btn-confirm-delete-enq-text">Delete Record</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard JavaScript Module -->
+    <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

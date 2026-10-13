@@ -9,6 +9,7 @@ import { initForms } from './form.js';
 import { initCad360 } from './cad360.js';
 import { initDesign3D } from './design3d.js';
 import { initFeedback } from './feedback.js';
+import { initHeroBanner } from './heroBanner.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // 01. Dismiss Loading Screen
@@ -142,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 06. Active Nav Highlighting (IntersectionObserver - ZERO Layout Thrashing)
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
+    const thumbTabs = document.querySelectorAll('.thumb-tab');
 
     if ('IntersectionObserver' in window && sections.length > 0) {
         const sectionObserver = new IntersectionObserver((entries) => {
@@ -150,6 +152,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     const id = entry.target.getAttribute('id');
                     navLinks.forEach(link => {
                         link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                    });
+                    thumbTabs.forEach(tab => {
+                        const href = tab.getAttribute('href');
+                        if (href && href.startsWith('#')) {
+                            tab.classList.toggle('active', href === `#${id}`);
+                        }
                     });
                 }
             });
@@ -162,6 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Initialize Submodules
+    initHeroBanner();
     initSliders();
     initComparison();
     initForms();

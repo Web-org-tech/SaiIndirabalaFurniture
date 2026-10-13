@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | Sai Indirabala Furniture &amp; Interiors</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="../images/icon/logo.png">
+
+    <script>
+        // Ensure trailing slash for directory route so relative asset paths resolve reliably
+        if (window.location.pathname.endsWith('/admin')) {
+            window.location.replace(window.location.pathname + '/' + window.location.search + window.location.hash);
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheet Mapping -->
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="css/admin.css">
+
+    <!-- Supabase JS SDK (High-Reliability Preload) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="admin-body">
+
+    <main class="login-container">
+        <div class="login-card">
+            <!-- Brand Header -->
+            <div class="login-brand">
+                <img src="../images/icon/logo.png" alt="Sai Indirabala Furniture Logo" class="login-logo" width="54" height="54">
+                <h1 class="login-title">SAI INDIRABALA</h1>
+                <div class="login-subtitle">Management Portal</div>
+            </div>
+
+            <!-- Error Banner -->
+            <div id="login-error-banner" class="login-error-banner" role="alert" aria-live="polite" style="display: none;"></div>
+
+            <!-- Config Warning Banner -->
+            <div id="config-warning-banner" class="config-warning-banner" role="alert" style="display: none;">
+                <strong>⚙️ Setup Notice:</strong> Supabase credentials are pending configuration in <code>js/config.js</code>. Configure your project URL and Anon key to enable authentication.
+            </div>
+
+            <!-- Login Form -->
+            <form id="admin-login-form" novalidate autocomplete="on">
+                <div class="admin-form-group">
+                    <label for="admin-email" class="admin-label">Administrator Email</label>
+                    <div class="admin-input-wrap">
+                        <input 
+                            type="email" 
+                            id="admin-email" 
+                            name="email" 
+                            class="admin-input" 
+                            placeholder="admin@saiindirabala.in" 
+                            required 
+                            autocomplete="username"
+                        >
+                    </div>
+                </div>
+
+                <div class="admin-form-group">
+                    <label for="admin-password" class="admin-label">Password</label>
+                    <div class="admin-input-wrap">
+                        <input 
+                            type="password" 
+                            id="admin-password" 
+                            name="password" 
+                            class="admin-input" 
+                            placeholder="••••••••••••" 
+                            required 
+                            autocomplete="current-password"
+                        >
+                        <button 
+                            type="button" 
+                            id="toggle-password-btn" 
+                            class="password-toggle-btn" 
+                            aria-label="Show password" 
+                            aria-pressed="false"
+                            tabindex="0"
+                        >
+                            <!-- Eye icon -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" id="login-submit-btn" class="btn-admin-primary">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                        <polyline points="10 17 15 12 10 7"></polyline>
+                        <line x1="15" y1="12" x2="3" y2="12"></line>
+                    </svg>
+                    <span>Sign In to Portal</span>
+                </button>
+            </form>
+
+            <!-- Return Link -->
+            <div class="login-return-link">
+                <a href="../index.html">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    <span>Return to Public Website</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript Module -->
+    <script type="module" src="js/auth.js"></script>
+</body>
+</html>
