@@ -23,19 +23,7 @@
             ]
         }
     ],
-    "redirects": [
-        {
-            "source": "/:path*",
-            "has": [
-                {
-                    "type": "host",
-                    "value": "www.saiindirabala.in"
-                }
-            ],
-            "destination": "https://saiindirabala.in/:path*",
-            "permanent": true
-        }
-    ],
+
     "rewrites": [
         { "source": "/((?!index|catalog|our-work|admin|404|css|js|images|assets|robots\\.txt|sitemap\\.xml).*)", "destination": "/404.html" }
     ]

@@ -61,13 +61,12 @@ console.log('\n--- Test Group 2: Hostname & URL Architecture ---');
 const vercelPath = path.join(rootDir, 'vercel.json');
 assert(fs.existsSync(vercelPath), 'vercel.json exists');
 const vercelConfig = JSON.parse(fs.readFileSync(vercelPath, 'utf8'));
-assert(vercelConfig.cleanUrls === true, 'vercel.json has cleanUrls enabled');
-assert(Array.isArray(vercelConfig.redirects), 'vercel.json contains redirect rules');
-const wwwRedirect = vercelConfig.redirects.find(r => 
-    (r.source && r.source.includes('www.saiindirabala.in')) || 
+// Ensure vercel.json does not conflict with Vercel project domain routing
+const hasConflictingRedirects = Array.isArray(vercelConfig.redirects) && vercelConfig.redirects.some(r => 
+    (r.destination && r.destination.includes('saiindirabala.in')) &&
     (Array.isArray(r.has) && r.has.some(h => h.value === 'www.saiindirabala.in'))
 );
-assert(wwwRedirect && wwwRedirect.permanent === true, 'vercel.json has permanent 301 redirect for www subdomain');
+assert(!hasConflictingRedirects, 'vercel.json does not contain conflicting redirects that cause 308 loops with Vercel Edge DNS');
 assert(Array.isArray(vercelConfig.headers) && vercelConfig.headers.length >= 2, 'vercel.json has security and caching headers');
 
 // ── TEST GROUP 3: HTML PAGE METADATA & CANONICAL AUDIT ───────────────

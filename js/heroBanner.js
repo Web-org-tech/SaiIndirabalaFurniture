@@ -82,16 +82,22 @@ function renderSingleBanner(banner, visualWrap, heroSection, fallbackSrc) {
 
     // Update Image with safe error fallback
     if (existingImg && banner.image_url) {
-        const tempImg = new Image();
-        tempImg.onload = () => {
-            existingImg.src = banner.image_url;
-            if (banner.title) existingImg.alt = banner.title;
-        };
-        tempImg.onerror = () => {
-            console.warn('[Hero Banner] Failed to load banner image URL. Falling back to local hero.');
+        const isWebPageUrl = /pexels\.com\/photo\/|unsplash\.com\/photos\//i.test(banner.image_url);
+        if (isWebPageUrl) {
+            console.warn('[Hero Banner] Banner image URL is a webpage link, not a direct image file. Falling back to local hero.');
             existingImg.src = fallbackSrc;
-        };
-        tempImg.src = banner.image_url;
+        } else {
+            const tempImg = new Image();
+            tempImg.onload = () => {
+                existingImg.src = banner.image_url;
+                if (banner.title) existingImg.alt = banner.title;
+            };
+            tempImg.onerror = () => {
+                console.warn('[Hero Banner] Failed to load banner image URL. Falling back to local hero.');
+                existingImg.src = fallbackSrc;
+            };
+            tempImg.src = banner.image_url;
+        }
     }
 
     // Update Floating Card Copy if provided

@@ -1,0 +1,265 @@
+{
+  "inspection": {
+    "stack": "Vanilla HTML5 / CSS3 / ES6 Multi-Page Application (MPA)",
+    "cleanUrls": true,
+    "router": "Vercel Static Route Engine & Edge Rules",
+    "database": "Supabase BaaS (PostgreSQL + RLS + Storage)",
+    "frontendLibraries": [
+      "Three.js (CAD 360 viewer)",
+      "Lucide Icons",
+      "Google Fonts (Outfit & Plus Jakarta Sans)"
+    ],
+    "publicRoutes": [
+      "/",
+      "/catalog",
+      "/our-work",
+      "/404",
+      "/admin",
+      "/admin/dashboard"
+    ],
+    "staticAssets": [
+      "/sitemap.xml",
+      "/robots.txt",
+      "/vercel.json"
+    ]
+  },
+  "pages": [
+    {
+      "page": "/",
+      "name": "Homepage (index.html)",
+      "status": "PASS",
+      "statusCode": 200,
+      "title": "Interior Designers in Madurai | Sai Indirabala Furnitures",
+      "consoleErrors": [],
+      "failedRequests": [
+        "GET https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5227.748088917146!2d78.0998110622159!3d9.990083062600796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c9310e1577d9%3A0x5a52967a79b3cb85!2sSai%20indirabala%20furniture!5e0!3m2!1sen!2sin!4v1787859274014!5m2!1sen!2sin - net::ERR_ABORTED"
+      ]
+    },
+    {
+      "page": "/catalog",
+      "name": "Catalog (catalog.html)",
+      "status": "PASS",
+      "statusCode": 200,
+      "title": "Modular Kitchen & Wardrobe Design Madurai | Sai Indirabala",
+      "consoleErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "/our-work",
+      "name": "Our Work Gallery (our-work.html)",
+      "status": "PASS",
+      "statusCode": 200,
+      "title": "Office & Commercial Interior Design Madurai | Sai Indirabala",
+      "consoleErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "/404",
+      "name": "Custom 404 Page (404.html)",
+      "status": "PASS",
+      "statusCode": 200,
+      "title": "404 - Page Not Found | Sai Indirabala Furnitures Madurai",
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": []
+    },
+    {
+      "page": "/non-existent-route-audit-check",
+      "name": "Invalid Route Fallback",
+      "status": "PASS",
+      "statusCode": 404,
+      "title": "404 - Page Not Found | Sai Indirabala Furnitures Madurai",
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": []
+    },
+    {
+      "page": "/admin",
+      "name": "Admin Login (admin/index.html)",
+      "status": "PASS",
+      "statusCode": 200,
+      "title": "Admin Login | Sai Indirabala Furniture & Interiors",
+      "consoleErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "/admin/dashboard",
+      "name": "Admin Dashboard (admin/dashboard.html)",
+      "status": "PASS",
+      "statusCode": 200,
+      "title": "Admin Login | Sai Indirabala Furniture & Interiors",
+      "consoleErrors": [],
+      "failedRequests": []
+    }
+  ],
+  "features": [],
+  "viewports": [
+    {
+      "page": "/",
+      "viewport": "Mobile (iPhone 12/13/14)",
+      "overflow": {
+        "docWidth": 390,
+        "scrollWidth": 390,
+        "bodyScrollWidth": 390,
+        "hasOverflow": false
+      }
+    },
+    {
+      "page": "/",
+      "viewport": "Tablet (iPad Mini / Portrait)",
+      "overflow": {
+        "docWidth": 768,
+        "scrollWidth": 768,
+        "bodyScrollWidth": 768,
+        "hasOverflow": false
+      }
+    },
+    {
+      "page": "/",
+      "viewport": "Desktop (1440p MacBook / PC)",
+      "overflow": {
+        "docWidth": 1440,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440,
+        "hasOverflow": false
+      }
+    },
+    {
+      "page": "/catalog",
+      "viewport": "Mobile (iPhone 12/13/14)",
+      "overflow": {
+        "docWidth": 390,
+        "scrollWidth": 390,
+        "bodyScrollWidth": 390,
+        "hasOverflow": false
+      }
+    },
+    {
+      "page": "/catalog",
+      "viewport": "Tablet (iPad Mini / Portrait)",
+      "overflow": {
+        "docWidth": 768,
+        "scrollWidth": 768,
+        "bodyScrollWidth": 768,
+        "hasOverflow": false
+      }
+    },
+    {
+      "page": "/catalog",
+      "viewport": "Desktop (1440p MacBook / PC)",
+      "overflow": {
+        "docWidth": 1440,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440,
+        "hasOverflow": false
+      }
+    },
+    {
+      "page": "/our-work",
+      "viewport": "Mobile (iPhone 12/13/14)",
+      "overflow": {
+        "docWidth": 390,
+        "scrollWidth": 390,
+        "bodyScrollWidth": 390,
+        "hasOverflow": false
+      }
+    },
+    {
+      "page": "/our-work",
+      "viewport": "Tablet (iPad Mini / Portrait)",
+      "overflow": {
+        "docWidth": 768,
+        "scrollWidth": 768,
+        "bodyScrollWidth": 768,
+        "hasOverflow": false
+      }
+    },
+    {
+      "page": "/our-work",
+      "viewport": "Desktop (1440p MacBook / PC)",
+      "overflow": {
+        "docWidth": 1440,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440,
+        "hasOverflow": false
+      }
+    },
+    {
+      "page": "/admin/dashboard",
+      "viewport": "Mobile (iPhone 12/13/14)",
+      "overflow": {
+        "docWidth": 390,
+        "scrollWidth": 390,
+        "bodyScrollWidth": 390,
+        "hasOverflow": false
+      }
+    },
+    {
+      "page": "/admin/dashboard",
+      "viewport": "Tablet (iPad Mini / Portrait)",
+      "overflow": {
+        "docWidth": 768,
+        "scrollWidth": 768,
+        "bodyScrollWidth": 768,
+        "hasOverflow": false
+      }
+    },
+    {
+      "page": "/admin/dashboard",
+      "viewport": "Desktop (1440p MacBook / PC)",
+      "overflow": {
+        "docWidth": 1440,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440,
+        "hasOverflow": false
+      }
+    }
+  ],
+  "liveProduction": [
+    {
+      "name": "Live Apex Homepage",
+      "url": "https://saiindirabala.in/",
+      "status": 308,
+      "passed": false
+    },
+    {
+      "name": "Live WWW Redirect",
+      "url": "https://www.saiindirabala.in/",
+      "status": 200,
+      "passed": false
+    },
+    {
+      "name": "Live Catalog Clean URL",
+      "url": "https://saiindirabala.in/catalog",
+      "status": 308,
+      "passed": false
+    },
+    {
+      "name": "Live Our Work Clean URL",
+      "url": "https://saiindirabala.in/our-work",
+      "status": 308,
+      "passed": false
+    },
+    {
+      "name": "Live Sitemap XML",
+      "url": "https://saiindirabala.in/sitemap.xml",
+      "status": 308,
+      "passed": false
+    },
+    {
+      "name": "Live Robots TXT",
+      "url": "https://saiindirabala.in/robots.txt",
+      "status": 308,
+      "passed": false
+    },
+    {
+      "name": "Live 404 Handling",
+      "url": "https://saiindirabala.in/non-existent-page-check",
+      "status": 308,
+      "passed": false
+    }
+  ],
+  "bugs": []
+}
