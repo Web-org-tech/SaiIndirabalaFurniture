@@ -1,0 +1,4025 @@
+{
+  "tag": "body",
+  "children": [
+    {
+      "tag": "div",
+      "id": "loading-screen",
+      "class": "fade-out",
+      "children": [
+        {
+          "tag": "div",
+          "class": "loader-furniture-icon",
+          "children": [
+            {
+              "tag": "svg",
+              "children": [
+                {
+                  "tag": "path"
+                },
+                {
+                  "tag": "path"
+                },
+                {
+                  "tag": "path"
+                },
+                {
+                  "tag": "path"
+                },
+                {
+                  "tag": "circle"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "class": "loader-brand"
+        },
+        {
+          "tag": "div",
+          "class": "loader-tagline"
+        },
+        {
+          "tag": "div",
+          "class": "loader-line-container",
+          "children": [
+            {
+              "tag": "div",
+              "class": "loader-line-progress"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "div",
+      "class": "top-notice-bar",
+      "children": [
+        {
+          "tag": "span"
+        },
+        {
+          "tag": "strong"
+        }
+      ]
+    },
+    {
+      "tag": "header",
+      "class": "site-header",
+      "children": [
+        {
+          "tag": "div",
+          "class": "container",
+          "children": [
+            {
+              "tag": "div",
+              "class": "nav-inner",
+              "children": [
+                {
+                  "tag": "a",
+                  "class": "brand-logo",
+                  "children": [
+                    {
+                      "tag": "img",
+                      "class": "brand-logo-img"
+                    },
+                    {
+                      "tag": "div",
+                      "class": "brand-text-wrap",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "class": "brand-name"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "brand-sub"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "nav",
+                  "class": "nav-menu",
+                  "children": [
+                    {
+                      "tag": "a",
+                      "class": "active nav-link"
+                    },
+                    {
+                      "tag": "a",
+                      "class": "nav-link"
+                    },
+                    {
+                      "tag": "a",
+                      "class": "nav-link"
+                    },
+                    {
+                      "tag": "a",
+                      "class": "nav-link"
+                    },
+                    {
+                      "tag": "a",
+                      "class": "nav-link"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "class": "nav-actions",
+                  "children": [
+                    {
+                      "tag": "a",
+                      "id": "header-call-btn",
+                      "class": "nav-header-call-btn",
+                      "children": [
+                        {
+                          "tag": "svg",
+                          "children": [
+                            {
+                              "tag": "path"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "span"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "a",
+                      "id": "header-wa-btn",
+                      "class": "nav-call-btn nav-wa-btn",
+                      "children": [
+                        {
+                          "tag": "svg",
+                          "children": [
+                            {
+                              "tag": "path"
+                            },
+                            {
+                              "tag": "path"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "span"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "button",
+                      "class": "hamburger-btn",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "class": "hamburger-line"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "hamburger-line"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "hamburger-line"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "div",
+      "id": "mobile-drawer",
+      "class": "mobile-drawer",
+      "children": [
+        {
+          "tag": "div",
+          "class": "mobile-drawer-header",
+          "children": [
+            {
+              "tag": "div",
+              "class": "brand-logo",
+              "children": [
+                {
+                  "tag": "img",
+                  "class": "brand-logo-img"
+                },
+                {
+                  "tag": "div",
+                  "class": "brand-text-wrap",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "class": "brand-name"
+                    },
+                    {
+                      "tag": "span",
+                      "class": "brand-sub"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "button",
+              "id": "drawer-close-btn",
+              "class": "mobile-drawer-close",
+              "children": [
+                {
+                  "tag": "svg",
+                  "children": [
+                    {
+                      "tag": "path"
+                    }
+                  ]
+                },
+                {
+                  "tag": "span"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "ul",
+          "class": "mobile-nav-list",
+          "children": [
+            {
+              "tag": "li",
+              "children": [
+                {
+                  "tag": "a",
+                  "class": "mobile-nav-link"
+                }
+              ]
+            },
+            {
+              "tag": "li",
+              "children": [
+                {
+                  "tag": "a",
+                  "class": "mobile-nav-link"
+                }
+              ]
+            },
+            {
+              "tag": "li",
+              "children": [
+                {
+                  "tag": "a",
+                  "class": "mobile-nav-link"
+                }
+              ]
+            },
+            {
+              "tag": "li",
+              "children": [
+                {
+                  "tag": "a",
+                  "class": "mobile-nav-link"
+                }
+              ]
+            },
+            {
+              "tag": "li",
+              "children": [
+                {
+                  "tag": "a",
+                  "class": "mobile-nav-link"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "class": "mobile-drawer-footer",
+          "children": [
+            {
+              "tag": "div",
+              "class": "mobile-contact-pill",
+              "children": [
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "svg",
+                      "children": [
+                        {
+                          "tag": "path"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "span"
+                    }
+                  ]
+                },
+                {
+                  "tag": "span"
+                }
+              ]
+            },
+            {
+              "tag": "a",
+              "class": "btn btn-full btn-primary",
+              "children": [
+                {
+                  "tag": "svg",
+                  "children": [
+                    {
+                      "tag": "path"
+                    }
+                  ]
+                },
+                {
+                  "tag": "span"
+                }
+              ]
+            },
+            {
+              "tag": "a",
+              "class": "btn btn-full btn-whatsapp",
+              "children": [
+                {
+                  "tag": "svg",
+                  "children": [
+                    {
+                      "tag": "path"
+                    }
+                  ]
+                },
+                {
+                  "tag": "span"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "div",
+      "id": "drawer-backdrop"
+    },
+    {
+      "tag": "section",
+      "id": "hero",
+      "class": "hero-section",
+      "children": [
+        {
+          "tag": "div",
+          "class": "container",
+          "children": [
+            {
+              "tag": "div",
+              "class": "hero-grid",
+              "children": [
+                {
+                  "tag": "div",
+                  "class": "hero-content reveal revealed",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "badge-usp",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "class": "dot"
+                        },
+                        {
+                          "tag": "span"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "h1",
+                      "class": "hero-title",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "class": "hero-highlight"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "hero-subtitle-3d"
+                    },
+                    {
+                      "tag": "p",
+                      "class": "hero-description"
+                    },
+                    {
+                      "tag": "div",
+                      "class": "hero-cta-group",
+                      "children": [
+                        {
+                          "tag": "a",
+                          "id": "hero-primary-cta",
+                          "class": "btn btn-lg btn-primary",
+                          "children": [
+                            {
+                              "tag": "span"
+                            },
+                            {
+                              "tag": "svg",
+                              "children": [
+                                {
+                                  "tag": "path"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "a",
+                          "id": "hero-secondary-cta",
+                          "class": "btn btn-lg btn-secondary",
+                          "children": [
+                            {
+                              "tag": "span"
+                            },
+                            {
+                              "tag": "svg",
+                              "children": [
+                                {
+                                  "tag": "path"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "class": "hero-visual-wrap reveal revealed",
+                  "children": [
+                    {
+                      "tag": "picture",
+                      "children": [
+                        {
+                          "tag": "source"
+                        },
+                        {
+                          "tag": "img",
+                          "class": "hero-img"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "hero-floating-card",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "floating-title"
+                        },
+                        {
+                          "tag": "div",
+                          "class": "floating-text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "section",
+      "id": "services",
+      "class": "section-spacing services-section",
+      "children": [
+        {
+          "tag": "div",
+          "class": "container",
+          "children": [
+            {
+              "tag": "div",
+              "class": "reveal section-header",
+              "children": [
+                {
+                  "tag": "div",
+                  "class": "eyebrow"
+                },
+                {
+                  "tag": "h2",
+                  "class": "section-title"
+                },
+                {
+                  "tag": "p",
+                  "class": "section-subtitle"
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "class": "services-grid",
+              "children": [
+                {
+                  "tag": "article",
+                  "class": "reveal service-card",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "service-card-img-wrap",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "class": "service-card-img"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "service-badge"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "service-num-badge"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "service-card-body",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "service-header-group",
+                          "children": [
+                            {
+                              "tag": "h3",
+                              "class": "service-card-title"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "service-card-sub"
+                            },
+                            {
+                              "tag": "p",
+                              "class": "service-card-desc"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "service-best-for",
+                          "children": [
+                            {
+                              "tag": "strong"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "article",
+                  "class": "reveal service-card",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "service-card-img-wrap",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "class": "service-card-img"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "service-badge"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "service-num-badge"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "service-card-body",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "service-header-group",
+                          "children": [
+                            {
+                              "tag": "h3",
+                              "class": "service-card-title"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "service-card-sub"
+                            },
+                            {
+                              "tag": "p",
+                              "class": "service-card-desc"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "service-best-for",
+                          "children": [
+                            {
+                              "tag": "strong"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "article",
+                  "class": "reveal service-card",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "service-card-img-wrap",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "class": "service-card-img"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "service-badge"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "service-num-badge"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "service-card-body",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "service-header-group",
+                          "children": [
+                            {
+                              "tag": "h3",
+                              "class": "service-card-title"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "service-card-sub"
+                            },
+                            {
+                              "tag": "p",
+                              "class": "service-card-desc"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "service-best-for",
+                          "children": [
+                            {
+                              "tag": "strong"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "article",
+                  "class": "reveal service-card",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "service-card-img-wrap",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "class": "service-card-img"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "service-badge"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "service-num-badge"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "service-card-body",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "service-header-group",
+                          "children": [
+                            {
+                              "tag": "h3",
+                              "class": "service-card-title"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "service-card-sub"
+                            },
+                            {
+                              "tag": "p",
+                              "class": "service-card-desc"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "service-best-for",
+                          "children": [
+                            {
+                              "tag": "strong"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "article",
+                  "class": "reveal service-card service-card-featured",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "service-card-img-wrap",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "class": "service-card-img"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "service-badge"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "service-num-badge"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "service-card-body",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "service-header-group",
+                          "children": [
+                            {
+                              "tag": "h3",
+                              "class": "service-card-title"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "service-card-sub"
+                            },
+                            {
+                              "tag": "p",
+                              "class": "service-card-desc"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "service-best-for",
+                          "children": [
+                            {
+                              "tag": "strong"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "service-card-actions",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "btn btn-whatsapp",
+                              "children": [
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "a",
+                              "class": "btn btn-primary",
+                              "children": [
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "section",
+      "id": "3d-design",
+      "class": "section-spacing usp-section",
+      "children": [
+        {
+          "tag": "div",
+          "class": "container",
+          "children": [
+            {
+              "tag": "div",
+              "class": "reveal section-header",
+              "children": [
+                {
+                  "tag": "div",
+                  "class": "eyebrow"
+                },
+                {
+                  "tag": "h2",
+                  "class": "section-title"
+                },
+                {
+                  "tag": "div",
+                  "class": "hero-subtitle-3d"
+                },
+                {
+                  "tag": "p",
+                  "class": "section-subtitle"
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "id": "design-3d-slider",
+              "class": "design-3d-slider-wrap reveal",
+              "children": [
+                {
+                  "tag": "div",
+                  "class": "design-3d-slider",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "design-3d-slide",
+                      "children": [
+                        {
+                          "tag": "img"
+                        },
+                        {
+                          "tag": "div",
+                          "class": "design-3d-slide-caption",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "children": [
+                                {
+                                  "tag": "span",
+                                  "class": "design-3d-slide-tag"
+                                },
+                                {
+                                  "tag": "h3",
+                                  "class": "design-3d-slide-title"
+                                },
+                                {
+                                  "tag": "p",
+                                  "class": "design-3d-slide-desc"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "active design-3d-slide",
+                      "children": [
+                        {
+                          "tag": "img"
+                        },
+                        {
+                          "tag": "div",
+                          "class": "design-3d-slide-caption",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "children": [
+                                {
+                                  "tag": "span",
+                                  "class": "design-3d-slide-tag"
+                                },
+                                {
+                                  "tag": "h3",
+                                  "class": "design-3d-slide-title"
+                                },
+                                {
+                                  "tag": "p",
+                                  "class": "design-3d-slide-desc"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "design-3d-slide",
+                      "children": [
+                        {
+                          "tag": "img"
+                        },
+                        {
+                          "tag": "div",
+                          "class": "design-3d-slide-caption",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "children": [
+                                {
+                                  "tag": "span",
+                                  "class": "design-3d-slide-tag"
+                                },
+                                {
+                                  "tag": "h3",
+                                  "class": "design-3d-slide-title"
+                                },
+                                {
+                                  "tag": "p",
+                                  "class": "design-3d-slide-desc"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "design-3d-slide",
+                      "children": [
+                        {
+                          "tag": "img"
+                        },
+                        {
+                          "tag": "div",
+                          "class": "design-3d-slide-caption",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "children": [
+                                {
+                                  "tag": "span",
+                                  "class": "design-3d-slide-tag"
+                                },
+                                {
+                                  "tag": "h3",
+                                  "class": "design-3d-slide-title"
+                                },
+                                {
+                                  "tag": "p",
+                                  "class": "design-3d-slide-desc"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "class": "design-3d-controls",
+                  "children": [
+                    {
+                      "tag": "button",
+                      "class": "design-3d-nav-btn design-3d-prev",
+                      "children": [
+                        {
+                          "tag": "svg",
+                          "children": [
+                            {
+                              "tag": "path"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "button",
+                      "class": "design-3d-nav-btn design-3d-next",
+                      "children": [
+                        {
+                          "tag": "svg",
+                          "children": [
+                            {
+                              "tag": "path"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "class": "design-3d-slide-caption",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "design-3d-dots",
+                      "children": [
+                        {
+                          "tag": "button",
+                          "class": "design-3d-dot"
+                        },
+                        {
+                          "tag": "button",
+                          "class": "active design-3d-dot"
+                        },
+                        {
+                          "tag": "button",
+                          "class": "design-3d-dot"
+                        },
+                        {
+                          "tag": "button",
+                          "class": "design-3d-dot"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "class": "design-3d-progress-track",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "design-3d-progress-fill"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "class": "process-flow reveal",
+              "children": [
+                {
+                  "tag": "div",
+                  "class": "flow-step-card",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "flow-step-num"
+                    },
+                    {
+                      "tag": "h3",
+                      "class": "flow-step-title"
+                    },
+                    {
+                      "tag": "p",
+                      "class": "flow-step-desc"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "class": "flow-step-card",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "flow-step-num"
+                    },
+                    {
+                      "tag": "h3",
+                      "class": "flow-step-title"
+                    },
+                    {
+                      "tag": "p",
+                      "class": "flow-step-desc"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "class": "active-step flow-step-card",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "flow-step-num"
+                    },
+                    {
+                      "tag": "h3",
+                      "class": "flow-step-title"
+                    },
+                    {
+                      "tag": "p",
+                      "class": "flow-step-desc"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "class": "flow-step-card",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "flow-step-num"
+                    },
+                    {
+                      "tag": "h3",
+                      "class": "flow-step-title"
+                    },
+                    {
+                      "tag": "p",
+                      "class": "flow-step-desc"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "class": "flow-step-card",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "flow-step-num"
+                    },
+                    {
+                      "tag": "h3",
+                      "class": "flow-step-title"
+                    },
+                    {
+                      "tag": "p",
+                      "class": "flow-step-desc"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "class": "reveal usp-cta-box",
+              "children": [
+                {
+                  "tag": "a",
+                  "id": "usp-discuss-btn",
+                  "class": "btn btn-accent btn-lg",
+                  "children": [
+                    {
+                      "tag": "span"
+                    },
+                    {
+                      "tag": "svg",
+                      "children": [
+                        {
+                          "tag": "path"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "section",
+      "id": "our-work",
+      "class": "comparison-section section-spacing",
+      "children": [
+        {
+          "tag": "span",
+          "id": "comparison"
+        },
+        {
+          "tag": "div",
+          "class": "container",
+          "children": [
+            {
+              "tag": "div",
+              "class": "reveal section-header",
+              "children": [
+                {
+                  "tag": "div",
+                  "class": "eyebrow"
+                },
+                {
+                  "tag": "h2",
+                  "class": "section-title"
+                },
+                {
+                  "tag": "p",
+                  "class": "section-subtitle"
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "class": "comparison-card reveal",
+              "children": [
+                {
+                  "tag": "div",
+                  "class": "comparison-container",
+                  "children": [
+                    {
+                      "tag": "img",
+                      "class": "comp-img"
+                    },
+                    {
+                      "tag": "div",
+                      "class": "comp-after-wrap",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "class": "comp-img"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "comp-badge comp-badge-before"
+                    },
+                    {
+                      "tag": "div",
+                      "class": "comp-badge comp-badge-after"
+                    },
+                    {
+                      "tag": "div",
+                      "class": "comp-divider",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "comp-handle",
+                          "children": [
+                            {
+                              "tag": "svg",
+                              "children": [
+                                {
+                                  "tag": "path"
+                                },
+                                {
+                                  "tag": "path"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "input",
+                      "class": "comp-range-input"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "class": "comparison-instruction",
+                  "children": [
+                    {
+                      "tag": "svg",
+                      "children": [
+                        {
+                          "tag": "path"
+                        },
+                        {
+                          "tag": "path"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "span"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "section",
+      "id": "feedback",
+      "class": "feedback-section section-spacing",
+      "children": [
+        {
+          "tag": "div",
+          "class": "container",
+          "children": [
+            {
+              "tag": "div",
+              "class": "reveal section-header",
+              "children": [
+                {
+                  "tag": "div",
+                  "class": "eyebrow"
+                },
+                {
+                  "tag": "h2",
+                  "class": "section-title"
+                },
+                {
+                  "tag": "p",
+                  "class": "section-subtitle"
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "class": "feedback-trust-bar reveal",
+              "children": [
+                {
+                  "tag": "div",
+                  "class": "feedback-trust-item",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "class": "trust-icon"
+                    },
+                    {
+                      "tag": "span",
+                      "children": [
+                        {
+                          "tag": "strong"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "class": "feedback-trust-item",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "class": "trust-icon"
+                    },
+                    {
+                      "tag": "span",
+                      "children": [
+                        {
+                          "tag": "strong"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "class": "feedback-trust-item",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "class": "trust-icon"
+                    },
+                    {
+                      "tag": "span",
+                      "children": [
+                        {
+                          "tag": "strong"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "class": "feedback-trust-item",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "class": "trust-icon"
+                    },
+                    {
+                      "tag": "span",
+                      "children": [
+                        {
+                          "tag": "strong"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "class": "feedback-grid reveal",
+              "children": [
+                {
+                  "tag": "article",
+                  "class": "feedback-card",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "feedback-card-header",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "class": "feedback-avatar"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "feedback-author-info",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "class": "feedback-author-name",
+                                  "children": [
+                                    {
+                                      "tag": "span"
+                                    },
+                                    {
+                                      "tag": "span",
+                                      "class": "verified-badge"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "class": "feedback-location"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "feedback-rating",
+                          "children": [
+                            {
+                              "tag": "span",
+                              "class": "star-rating"
+                            },
+                            {
+                              "tag": "span",
+                              "class": "rating-score"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "feedback-project-tag"
+                        },
+                        {
+                          "tag": "blockquote",
+                          "class": "feedback-quote",
+                          "children": [
+                            {
+                              "tag": "strong"
+                            },
+                            {
+                              "tag": "strong"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "review-output-wrap",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "review-output-label",
+                          "children": [
+                            {
+                              "tag": "svg",
+                              "children": [
+                                {
+                                  "tag": "path"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "span"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "review-output-preview",
+                          "children": [
+                            {
+                              "tag": "img"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "review-zoom-overlay",
+                              "children": [
+                                {
+                                  "tag": "svg",
+                                  "children": [
+                                    {
+                                      "tag": "path"
+                                    },
+                                    {
+                                      "tag": "path"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "article",
+                  "class": "feedback-card",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "feedback-card-header",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "class": "feedback-avatar"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "feedback-author-info",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "class": "feedback-author-name",
+                                  "children": [
+                                    {
+                                      "tag": "span"
+                                    },
+                                    {
+                                      "tag": "span",
+                                      "class": "verified-badge"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "class": "feedback-location"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "feedback-rating",
+                          "children": [
+                            {
+                              "tag": "span",
+                              "class": "star-rating"
+                            },
+                            {
+                              "tag": "span",
+                              "class": "rating-score"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "feedback-project-tag"
+                        },
+                        {
+                          "tag": "blockquote",
+                          "class": "feedback-quote",
+                          "children": [
+                            {
+                              "tag": "strong"
+                            },
+                            {
+                              "tag": "strong"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "review-output-wrap",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "review-output-label",
+                          "children": [
+                            {
+                              "tag": "svg",
+                              "children": [
+                                {
+                                  "tag": "path"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "span"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "review-output-preview",
+                          "children": [
+                            {
+                              "tag": "img"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "review-zoom-overlay",
+                              "children": [
+                                {
+                                  "tag": "svg",
+                                  "children": [
+                                    {
+                                      "tag": "path"
+                                    },
+                                    {
+                                      "tag": "path"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "article",
+                  "class": "feedback-card",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "feedback-card-header",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "class": "feedback-avatar"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "feedback-author-info",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "class": "feedback-author-name",
+                                  "children": [
+                                    {
+                                      "tag": "span"
+                                    },
+                                    {
+                                      "tag": "span",
+                                      "class": "verified-badge"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "class": "feedback-location"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "feedback-rating",
+                          "children": [
+                            {
+                              "tag": "span",
+                              "class": "star-rating"
+                            },
+                            {
+                              "tag": "span",
+                              "class": "rating-score"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "feedback-project-tag"
+                        },
+                        {
+                          "tag": "blockquote",
+                          "class": "feedback-quote",
+                          "children": [
+                            {
+                              "tag": "strong"
+                            },
+                            {
+                              "tag": "strong"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "review-output-wrap",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "review-output-label",
+                          "children": [
+                            {
+                              "tag": "svg",
+                              "children": [
+                                {
+                                  "tag": "path"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "span"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "review-output-preview",
+                          "children": [
+                            {
+                              "tag": "img"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "review-zoom-overlay",
+                              "children": [
+                                {
+                                  "tag": "svg",
+                                  "children": [
+                                    {
+                                      "tag": "path"
+                                    },
+                                    {
+                                      "tag": "path"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "article",
+                  "class": "feedback-card feedback-card-extra",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "feedback-card-header",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "class": "feedback-avatar"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "feedback-author-info",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "class": "feedback-author-name",
+                                  "children": [
+                                    {
+                                      "tag": "span"
+                                    },
+                                    {
+                                      "tag": "span",
+                                      "class": "verified-badge"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "class": "feedback-location"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "feedback-rating",
+                          "children": [
+                            {
+                              "tag": "span",
+                              "class": "star-rating"
+                            },
+                            {
+                              "tag": "span",
+                              "class": "rating-score"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "feedback-project-tag"
+                        },
+                        {
+                          "tag": "blockquote",
+                          "class": "feedback-quote",
+                          "children": [
+                            {
+                              "tag": "strong"
+                            },
+                            {
+                              "tag": "strong"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "review-output-wrap",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "review-output-label",
+                          "children": [
+                            {
+                              "tag": "svg",
+                              "children": [
+                                {
+                                  "tag": "path"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "span"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "review-output-preview",
+                          "children": [
+                            {
+                              "tag": "img"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "review-zoom-overlay",
+                              "children": [
+                                {
+                                  "tag": "svg",
+                                  "children": [
+                                    {
+                                      "tag": "path"
+                                    },
+                                    {
+                                      "tag": "path"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "article",
+                  "class": "feedback-card feedback-card-extra",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "feedback-card-header",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "class": "feedback-avatar"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "feedback-author-info",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "class": "feedback-author-name",
+                                  "children": [
+                                    {
+                                      "tag": "span"
+                                    },
+                                    {
+                                      "tag": "span",
+                                      "class": "verified-badge"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "class": "feedback-location"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "feedback-rating",
+                          "children": [
+                            {
+                              "tag": "span",
+                              "class": "star-rating"
+                            },
+                            {
+                              "tag": "span",
+                              "class": "rating-score"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "feedback-project-tag"
+                        },
+                        {
+                          "tag": "blockquote",
+                          "class": "feedback-quote",
+                          "children": [
+                            {
+                              "tag": "strong"
+                            },
+                            {
+                              "tag": "strong"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "review-output-wrap",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "review-output-label",
+                          "children": [
+                            {
+                              "tag": "svg",
+                              "children": [
+                                {
+                                  "tag": "path"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "span"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "review-output-preview",
+                          "children": [
+                            {
+                              "tag": "img"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "review-zoom-overlay",
+                              "children": [
+                                {
+                                  "tag": "svg",
+                                  "children": [
+                                    {
+                                      "tag": "path"
+                                    },
+                                    {
+                                      "tag": "path"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "article",
+                  "class": "feedback-card feedback-card-extra",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "feedback-card-header",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "class": "feedback-avatar"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "feedback-author-info",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "class": "feedback-author-name",
+                                  "children": [
+                                    {
+                                      "tag": "span"
+                                    },
+                                    {
+                                      "tag": "span",
+                                      "class": "verified-badge"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "class": "feedback-location"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "feedback-rating",
+                          "children": [
+                            {
+                              "tag": "span",
+                              "class": "star-rating"
+                            },
+                            {
+                              "tag": "span",
+                              "class": "rating-score"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "feedback-project-tag"
+                        },
+                        {
+                          "tag": "blockquote",
+                          "class": "feedback-quote",
+                          "children": [
+                            {
+                              "tag": "strong"
+                            },
+                            {
+                              "tag": "strong"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "review-output-wrap",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "review-output-label",
+                          "children": [
+                            {
+                              "tag": "svg",
+                              "children": [
+                                {
+                                  "tag": "path"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "span"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "review-output-preview",
+                          "children": [
+                            {
+                              "tag": "img"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "review-zoom-overlay",
+                              "children": [
+                                {
+                                  "tag": "svg",
+                                  "children": [
+                                    {
+                                      "tag": "path"
+                                    },
+                                    {
+                                      "tag": "path"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "class": "feedback-actions reveal",
+              "children": [
+                {
+                  "tag": "button",
+                  "id": "toggle-reviews-btn",
+                  "class": "btn btn-secondary",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "class": "btn-text"
+                    },
+                    {
+                      "tag": "svg",
+                      "children": [
+                        {
+                          "tag": "path"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "section",
+      "id": "about",
+      "class": "section-spacing",
+      "children": [
+        {
+          "tag": "div",
+          "class": "container",
+          "children": [
+            {
+              "tag": "div",
+              "class": "why-us-grid",
+              "children": [
+                {
+                  "tag": "div",
+                  "id": "cad-360-container",
+                  "class": "cad-360-wrapper reveal",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "cad-header-bar",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "cad-badge-tag",
+                          "children": [
+                            {
+                              "tag": "span",
+                              "class": "live-dot"
+                            },
+                            {
+                              "tag": "span",
+                              "id": "cad-status-text"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "cad-canvas-wrap",
+                      "children": [
+                        {
+                          "tag": "canvas"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "cad-controls-bar",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "cad-btn-group",
+                          "children": [
+                            {
+                              "tag": "button",
+                              "id": "cad-mode-btn",
+                              "class": "cad-btn",
+                              "children": [
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "button",
+                              "id": "cad-reset-btn",
+                              "class": "cad-btn",
+                              "children": [
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "cad-drag-hint",
+                          "children": [
+                            {
+                              "tag": "svg",
+                              "children": [
+                                {
+                                  "tag": "path"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "span"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "class": "reveal why-us-content",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "section-header text-left",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "eyebrow"
+                        },
+                        {
+                          "tag": "h2",
+                          "class": "section-title"
+                        },
+                        {
+                          "tag": "p",
+                          "class": "section-subtitle"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "why-us-features-list",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "feature-item",
+                          "children": [
+                            {
+                              "tag": "span",
+                              "class": "feature-check-icon"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "feature-content",
+                              "children": [
+                                {
+                                  "tag": "h4"
+                                },
+                                {
+                                  "tag": "p"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "feature-item",
+                          "children": [
+                            {
+                              "tag": "span",
+                              "class": "feature-check-icon"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "feature-content",
+                              "children": [
+                                {
+                                  "tag": "h4"
+                                },
+                                {
+                                  "tag": "p"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "feature-item",
+                          "children": [
+                            {
+                              "tag": "span",
+                              "class": "feature-check-icon"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "feature-content",
+                              "children": [
+                                {
+                                  "tag": "h4"
+                                },
+                                {
+                                  "tag": "p"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "feature-item",
+                          "children": [
+                            {
+                              "tag": "span",
+                              "class": "feature-check-icon"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "feature-content",
+                              "children": [
+                                {
+                                  "tag": "h4"
+                                },
+                                {
+                                  "tag": "p"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "feature-item",
+                          "children": [
+                            {
+                              "tag": "span",
+                              "class": "feature-check-icon"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "feature-content",
+                              "children": [
+                                {
+                                  "tag": "h4"
+                                },
+                                {
+                                  "tag": "p"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "feature-item",
+                          "children": [
+                            {
+                              "tag": "span",
+                              "class": "feature-check-icon"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "feature-content",
+                              "children": [
+                                {
+                                  "tag": "h4"
+                                },
+                                {
+                                  "tag": "p"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "section",
+      "id": "how-it-works",
+      "class": "section-spacing",
+      "children": [
+        {
+          "tag": "div",
+          "class": "container",
+          "children": [
+            {
+              "tag": "div",
+              "class": "reveal section-header",
+              "children": [
+                {
+                  "tag": "div",
+                  "class": "eyebrow"
+                },
+                {
+                  "tag": "h2",
+                  "class": "section-title"
+                },
+                {
+                  "tag": "p",
+                  "class": "section-subtitle"
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "class": "reveal roadmap-container",
+              "children": [
+                {
+                  "tag": "div",
+                  "class": "roadmap-card",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "roadmap-number"
+                    },
+                    {
+                      "tag": "h3",
+                      "class": "roadmap-title"
+                    },
+                    {
+                      "tag": "p",
+                      "class": "roadmap-desc"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "class": "roadmap-card",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "roadmap-number"
+                    },
+                    {
+                      "tag": "h3",
+                      "class": "roadmap-title"
+                    },
+                    {
+                      "tag": "p",
+                      "class": "roadmap-desc"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "class": "roadmap-card",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "roadmap-number"
+                    },
+                    {
+                      "tag": "h3",
+                      "class": "roadmap-title"
+                    },
+                    {
+                      "tag": "p",
+                      "class": "roadmap-desc"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "class": "roadmap-card",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "roadmap-number"
+                    },
+                    {
+                      "tag": "h3",
+                      "class": "roadmap-title"
+                    },
+                    {
+                      "tag": "p",
+                      "class": "roadmap-desc"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "class": "roadmap-card",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "roadmap-number"
+                    },
+                    {
+                      "tag": "h3",
+                      "class": "roadmap-title"
+                    },
+                    {
+                      "tag": "p",
+                      "class": "roadmap-desc"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "section",
+      "id": "all-works",
+      "class": "all-works-section",
+      "children": [
+        {
+          "tag": "span",
+          "id": "projects"
+        },
+        {
+          "tag": "div",
+          "class": "container",
+          "children": [
+            {
+              "tag": "div",
+              "class": "works-swipe-header-controls",
+              "children": [
+                {
+                  "tag": "div",
+                  "class": "section-header text-left",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "eyebrow"
+                    },
+                    {
+                      "tag": "h2",
+                      "class": "section-title"
+                    },
+                    {
+                      "tag": "p",
+                      "class": "section-subtitle"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "class": "slider-nav-arrows",
+                  "children": [
+                    {
+                      "tag": "button",
+                      "class": "slider-arrow-btn slider-prev",
+                      "children": [
+                        {
+                          "tag": "svg",
+                          "children": [
+                            {
+                              "tag": "path"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "button",
+                      "class": "slider-arrow-btn slider-next",
+                      "children": [
+                        {
+                          "tag": "svg",
+                          "children": [
+                            {
+                              "tag": "path"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "class": "works-swipe-wrapper",
+              "children": [
+                {
+                  "tag": "div",
+                  "class": "works-swipe-track",
+                  "children": [
+                    {
+                      "tag": "article",
+                      "class": "works-swipe-card",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "works-card-img-wrap",
+                          "children": [
+                            {
+                              "tag": "img"
+                            },
+                            {
+                              "tag": "span",
+                              "class": "works-card-tag"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "works-card-zoom-badge",
+                              "children": [
+                                {
+                                  "tag": "svg",
+                                  "children": [
+                                    {
+                                      "tag": "path"
+                                    },
+                                    {
+                                      "tag": "path"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "works-card-body",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "children": [
+                                {
+                                  "tag": "h3",
+                                  "class": "works-card-title"
+                                },
+                                {
+                                  "tag": "p",
+                                  "class": "works-card-desc"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "class": "works-card-footer",
+                              "children": [
+                                {
+                                  "tag": "span"
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "article",
+                      "class": "works-swipe-card",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "works-card-img-wrap",
+                          "children": [
+                            {
+                              "tag": "img"
+                            },
+                            {
+                              "tag": "span",
+                              "class": "works-card-tag"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "works-card-zoom-badge",
+                              "children": [
+                                {
+                                  "tag": "svg",
+                                  "children": [
+                                    {
+                                      "tag": "path"
+                                    },
+                                    {
+                                      "tag": "path"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "works-card-body",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "children": [
+                                {
+                                  "tag": "h3",
+                                  "class": "works-card-title"
+                                },
+                                {
+                                  "tag": "p",
+                                  "class": "works-card-desc"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "class": "works-card-footer",
+                              "children": [
+                                {
+                                  "tag": "span"
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "article",
+                      "class": "works-swipe-card",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "works-card-img-wrap",
+                          "children": [
+                            {
+                              "tag": "img"
+                            },
+                            {
+                              "tag": "span",
+                              "class": "works-card-tag"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "works-card-zoom-badge",
+                              "children": [
+                                {
+                                  "tag": "svg",
+                                  "children": [
+                                    {
+                                      "tag": "path"
+                                    },
+                                    {
+                                      "tag": "path"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "works-card-body",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "children": [
+                                {
+                                  "tag": "h3",
+                                  "class": "works-card-title"
+                                },
+                                {
+                                  "tag": "p",
+                                  "class": "works-card-desc"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "class": "works-card-footer",
+                              "children": [
+                                {
+                                  "tag": "span"
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "article",
+                      "class": "works-swipe-card",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "works-card-img-wrap",
+                          "children": [
+                            {
+                              "tag": "img"
+                            },
+                            {
+                              "tag": "span",
+                              "class": "works-card-tag"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "works-card-zoom-badge",
+                              "children": [
+                                {
+                                  "tag": "svg",
+                                  "children": [
+                                    {
+                                      "tag": "path"
+                                    },
+                                    {
+                                      "tag": "path"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "works-card-body",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "children": [
+                                {
+                                  "tag": "h3",
+                                  "class": "works-card-title"
+                                },
+                                {
+                                  "tag": "p",
+                                  "class": "works-card-desc"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "class": "works-card-footer",
+                              "children": [
+                                {
+                                  "tag": "span"
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "article",
+                      "class": "works-swipe-card",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "works-card-img-wrap",
+                          "children": [
+                            {
+                              "tag": "img"
+                            },
+                            {
+                              "tag": "span",
+                              "class": "works-card-tag"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "works-card-zoom-badge",
+                              "children": [
+                                {
+                                  "tag": "svg",
+                                  "children": [
+                                    {
+                                      "tag": "path"
+                                    },
+                                    {
+                                      "tag": "path"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "works-card-body",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "children": [
+                                {
+                                  "tag": "h3",
+                                  "class": "works-card-title"
+                                },
+                                {
+                                  "tag": "p",
+                                  "class": "works-card-desc"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "class": "works-card-footer",
+                              "children": [
+                                {
+                                  "tag": "span"
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "class": "address-highlight-card reveal",
+              "children": [
+                {
+                  "tag": "div",
+                  "class": "addr-icon"
+                },
+                {
+                  "tag": "div",
+                  "class": "addr-content",
+                  "children": [
+                    {
+                      "tag": "strong"
+                    },
+                    {
+                      "tag": "span"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "section",
+      "id": "contact",
+      "class": "contact-section section-spacing",
+      "children": [
+        {
+          "tag": "div",
+          "class": "container",
+          "children": [
+            {
+              "tag": "div",
+              "class": "contact-card-wrap reveal",
+              "children": [
+                {
+                  "tag": "div",
+                  "class": "contact-grid",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "contact-info-col",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "class": "eyebrow"
+                            },
+                            {
+                              "tag": "h2",
+                              "class": "contact-info-title"
+                            },
+                            {
+                              "tag": "div"
+                            },
+                            {
+                              "tag": "p",
+                              "class": "contact-info-sub"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "contact-methods",
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "class": "contact-item-row",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "class": "contact-icon-box",
+                                      "children": [
+                                        {
+                                          "tag": "svg",
+                                          "children": [
+                                            {
+                                              "tag": "path"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "children": [
+                                        {
+                                          "tag": "span",
+                                          "class": "contact-label"
+                                        },
+                                        {
+                                          "tag": "span",
+                                          "class": "contact-val",
+                                          "children": [
+                                            {
+                                              "tag": "a"
+                                            },
+                                            {
+                                              "tag": "a"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "class": "contact-item-row",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "class": "contact-icon-box",
+                                      "children": [
+                                        {
+                                          "tag": "svg",
+                                          "children": [
+                                            {
+                                              "tag": "path"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "children": [
+                                        {
+                                          "tag": "span",
+                                          "class": "contact-label"
+                                        },
+                                        {
+                                          "tag": "span",
+                                          "class": "contact-val",
+                                          "children": [
+                                            {
+                                              "tag": "a"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "class": "contact-item-row",
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "class": "contact-icon-box",
+                                      "children": [
+                                        {
+                                          "tag": "svg",
+                                          "children": [
+                                            {
+                                              "tag": "path"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "children": [
+                                        {
+                                          "tag": "span",
+                                          "class": "contact-label"
+                                        },
+                                        {
+                                          "tag": "span",
+                                          "class": "contact-val",
+                                          "children": [
+                                            {
+                                              "tag": "strong"
+                                            },
+                                            {
+                                              "tag": "br"
+                                            },
+                                            {
+                                              "tag": "br"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tag": "span"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "contact-action-btns",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "btn btn-full btn-primary",
+                              "children": [
+                                {
+                                  "tag": "svg",
+                                  "children": [
+                                    {
+                                      "tag": "path"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "a",
+                              "class": "btn btn-full btn-whatsapp",
+                              "children": [
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "contact-form-col",
+                      "children": [
+                        {
+                          "tag": "h3",
+                          "class": "form-title"
+                        },
+                        {
+                          "tag": "p",
+                          "class": "form-sub"
+                        },
+                        {
+                          "tag": "div",
+                          "id": "form-status-msg",
+                          "class": "form-status-msg"
+                        },
+                        {
+                          "tag": "form",
+                          "id": "consultation-form",
+                          "class": "contact-form",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "class": "form-group",
+                              "children": [
+                                {
+                                  "tag": "label",
+                                  "class": "form-label"
+                                },
+                                {
+                                  "tag": "input",
+                                  "id": "user-name",
+                                  "class": "form-input"
+                                },
+                                {
+                                  "tag": "span",
+                                  "id": "user-name-error",
+                                  "class": "error-msg"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "class": "form-group",
+                              "children": [
+                                {
+                                  "tag": "label",
+                                  "class": "form-label"
+                                },
+                                {
+                                  "tag": "input",
+                                  "id": "user-phone",
+                                  "class": "form-input"
+                                },
+                                {
+                                  "tag": "span",
+                                  "id": "user-phone-error",
+                                  "class": "error-msg"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "class": "form-group",
+                              "children": [
+                                {
+                                  "tag": "label",
+                                  "class": "form-label"
+                                },
+                                {
+                                  "tag": "select",
+                                  "id": "project-type",
+                                  "class": "form-select",
+                                  "children": [
+                                    {
+                                      "tag": "option"
+                                    },
+                                    {
+                                      "tag": "option"
+                                    },
+                                    {
+                                      "tag": "option"
+                                    },
+                                    {
+                                      "tag": "option"
+                                    },
+                                    {
+                                      "tag": "option"
+                                    },
+                                    {
+                                      "tag": "option"
+                                    },
+                                    {
+                                      "tag": "option"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "span",
+                                  "id": "project-type-error",
+                                  "class": "error-msg"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "class": "form-group",
+                              "children": [
+                                {
+                                  "tag": "label",
+                                  "class": "form-label"
+                                },
+                                {
+                                  "tag": "textarea",
+                                  "id": "user-message",
+                                  "class": "form-textarea"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "button",
+                              "id": "submit-quote-btn",
+                              "class": "btn btn-full btn-lg btn-primary",
+                              "children": [
+                                {
+                                  "tag": "svg",
+                                  "children": [
+                                    {
+                                      "tag": "path"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "input"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "class": "map-location-wrap reveal",
+              "children": [
+                {
+                  "tag": "div",
+                  "class": "map-grid",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "map-embed-box",
+                      "children": [
+                        {
+                          "tag": "iframe"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "map-details-box",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "children": [
+                            {
+                              "tag": "div",
+                              "class": "eyebrow"
+                            },
+                            {
+                              "tag": "h3",
+                              "class": "map-details-title"
+                            },
+                            {
+                              "tag": "div",
+                              "children": [
+                                {
+                                  "tag": "strong"
+                                },
+                                {
+                                  "tag": "p",
+                                  "children": [
+                                    {
+                                      "tag": "strong"
+                                    },
+                                    {
+                                      "tag": "br"
+                                    },
+                                    {
+                                      "tag": "strong"
+                                    },
+                                    {
+                                      "tag": "br"
+                                    },
+                                    {
+                                      "tag": "br"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "class": "map-details-sub",
+                              "children": [
+                                {
+                                  "tag": "br"
+                                },
+                                {
+                                  "tag": "strong"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "class": "map-service-heading"
+                            },
+                            {
+                              "tag": "div",
+                              "class": "map-city-grid",
+                              "children": [
+                                {
+                                  "tag": "span",
+                                  "class": "map-city-pill"
+                                },
+                                {
+                                  "tag": "span",
+                                  "class": "map-city-pill"
+                                },
+                                {
+                                  "tag": "span",
+                                  "class": "map-city-pill"
+                                },
+                                {
+                                  "tag": "span",
+                                  "class": "map-city-pill"
+                                },
+                                {
+                                  "tag": "span",
+                                  "class": "map-city-pill"
+                                },
+                                {
+                                  "tag": "span",
+                                  "class": "map-city-pill"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "class": "map-directions-actions",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "id": "get-directions-btn",
+                              "class": "btn btn-primary",
+                              "children": [
+                                {
+                                  "tag": "svg",
+                                  "children": [
+                                    {
+                                      "tag": "path"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "a",
+                              "class": "btn btn-secondary",
+                              "children": [
+                                {
+                                  "tag": "svg",
+                                  "children": [
+                                    {
+                                      "tag": "path"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "footer",
+      "class": "site-footer",
+      "children": [
+        {
+          "tag": "div",
+          "class": "container",
+          "children": [
+            {
+              "tag": "div",
+              "class": "footer-top-grid",
+              "children": [
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "footer-brand-title"
+                    },
+                    {
+                      "tag": "div",
+                      "class": "footer-tagline"
+                    },
+                    {
+                      "tag": "p"
+                    },
+                    {
+                      "tag": "div",
+                      "class": "footer-coverage-badge",
+                      "children": [
+                        {
+                          "tag": "svg",
+                          "children": [
+                            {
+                              "tag": "path"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "span"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "footer-heading"
+                    },
+                    {
+                      "tag": "ul",
+                      "class": "footer-links-list",
+                      "children": [
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "footer-heading"
+                    },
+                    {
+                      "tag": "ul",
+                      "class": "footer-links-list",
+                      "children": [
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "strong"
+                            },
+                            {
+                              "tag": "address",
+                              "children": [
+                                {
+                                  "tag": "strong"
+                                },
+                                {
+                                  "tag": "br"
+                                },
+                                {
+                                  "tag": "br"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "strong"
+                            },
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            },
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "strong"
+                            },
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "class": "footer-bottom",
+              "children": [
+                {
+                  "tag": "div"
+                },
+                {
+                  "tag": "div"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "a",
+      "id": "floating-whatsapp-fab",
+      "class": "floating-whatsapp-fab",
+      "children": [
+        {
+          "tag": "svg",
+          "children": [
+            {
+              "tag": "path"
+            },
+            {
+              "tag": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "nav",
+      "class": "mobile-thumb-bar",
+      "children": [
+        {
+          "tag": "a",
+          "id": "thumb-home",
+          "class": "active thumb-tab",
+          "children": [
+            {
+              "tag": "svg",
+              "children": [
+                {
+                  "tag": "path"
+                },
+                {
+                  "tag": "polyline"
+                }
+              ]
+            },
+            {
+              "tag": "span",
+              "class": "thumb-label"
+            }
+          ]
+        },
+        {
+          "tag": "a",
+          "id": "thumb-services",
+          "class": "thumb-tab",
+          "children": [
+            {
+              "tag": "svg",
+              "children": [
+                {
+                  "tag": "rect"
+                },
+                {
+                  "tag": "path"
+                }
+              ]
+            },
+            {
+              "tag": "span",
+              "class": "thumb-label"
+            }
+          ]
+        },
+        {
+          "tag": "a",
+          "id": "thumb-catalog",
+          "class": "thumb-tab",
+          "children": [
+            {
+              "tag": "svg",
+              "children": [
+                {
+                  "tag": "path"
+                },
+                {
+                  "tag": "path"
+                }
+              ]
+            },
+            {
+              "tag": "span",
+              "class": "thumb-label"
+            }
+          ]
+        },
+        {
+          "tag": "a",
+          "id": "thumb-works",
+          "class": "thumb-tab",
+          "children": [
+            {
+              "tag": "svg",
+              "children": [
+                {
+                  "tag": "rect"
+                },
+                {
+                  "tag": "circle"
+                },
+                {
+                  "tag": "polyline"
+                }
+              ]
+            },
+            {
+              "tag": "span",
+              "class": "thumb-label"
+            }
+          ]
+        },
+        {
+          "tag": "a",
+          "id": "thumb-contact",
+          "class": "thumb-highlight thumb-tab",
+          "children": [
+            {
+              "tag": "svg",
+              "children": [
+                {
+                  "tag": "path"
+                }
+              ]
+            },
+            {
+              "tag": "span",
+              "class": "thumb-label"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "div",
+      "id": "review-lightbox-modal",
+      "class": "review-lightbox-modal",
+      "children": [
+        {
+          "tag": "div",
+          "id": "lightbox-backdrop",
+          "class": "lightbox-backdrop"
+        },
+        {
+          "tag": "div",
+          "class": "lightbox-content",
+          "children": [
+            {
+              "tag": "button",
+              "id": "lightbox-close-btn",
+              "class": "lightbox-close-btn",
+              "children": [
+                {
+                  "tag": "svg",
+                  "children": [
+                    {
+                      "tag": "path"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "class": "lightbox-img-wrap",
+              "children": [
+                {
+                  "tag": "img",
+                  "id": "lightbox-img"
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "class": "lightbox-footer",
+              "children": [
+                {
+                  "tag": "div",
+                  "id": "lightbox-caption"
+                },
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "span"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -6,6 +6,7 @@
  */
 
 import { getSubmitEnquiryEndpoint, getSupabase, isConfigured } from './supabaseClient.js';
+import { trackEvent } from './publicCommon.js';
 
 // ── Toast Notification Helper ─────────────────────────────────────────────────
 function showToast(title, desc, durationMs = 5000, isError = false) {
@@ -150,6 +151,12 @@ export function initForms() {
 
         if (!isValid) return;
 
+        // Track privacy-safe form submission initiation (strictly no PII)
+        trackEvent('form_submit', {
+            form_name: 'consultation_form',
+            project_type: typeSelect.value
+        });
+
         // 04. UI Loading State & Lock
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalBtnHTML = submitBtn.innerHTML;
@@ -231,6 +238,12 @@ export function initForms() {
 
             // ── SUCCESS CONFIRMATION ──────────────────────────────────────────
             if (submissionSucceeded) {
+                // Dispatch privacy-safe lead generation event (strictly no customer PII)
+                trackEvent('generate_lead', {
+                    lead_source: 'consultation_form',
+                    service_category: typeSelect.value
+                });
+
                 contactForm.reset();
                 updateStatusBanner('');
 

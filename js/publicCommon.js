@@ -95,4 +95,50 @@ export function initPublicCommon() {
             closeMobileMenu();
         }
     });
+
+    // 05. Privacy-Safe Lead & Contact Click Tracking (No PII)
+    setupContactClickTracking();
+}
+
+/**
+ * Dispatches privacy-safe analytics events to window.dataLayer or window.gtag if configured.
+ * Strictly avoids PII.
+ * @param {string} eventName
+ * @param {object} params
+ */
+export function trackEvent(eventName, params = {}) {
+    try {
+        if (typeof window.gtag === 'function') {
+            window.gtag('event', eventName, params);
+        } else if (Array.isArray(window.dataLayer)) {
+            window.dataLayer.push({ event: eventName, ...params });
+        }
+    } catch (e) {
+        // Analytics failure must never impact user experience
+    }
+}
+
+/**
+ * Attaches delegated click listeners for phone and WhatsApp enquiries.
+ */
+function setupContactClickTracking() {
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('a');
+        if (!link) return;
+
+        const href = link.getAttribute('href') || '';
+        if (href.startsWith('tel:')) {
+            trackEvent('phone_click', {
+                link_id: link.id || 'tel_link',
+                link_text: link.textContent.trim().substring(0, 30)
+            });
+            trackEvent('contact_click', { method: 'phone' });
+        } else if (href.includes('wa.me') || href.includes('whatsapp.com')) {
+            trackEvent('whatsapp_click', {
+                link_id: link.id || 'wa_link',
+                link_title: link.getAttribute('aria-label') || link.getAttribute('title') || 'WhatsApp'
+            });
+            trackEvent('contact_click', { method: 'whatsapp' });
+        }
+    }, { passive: true });
 }

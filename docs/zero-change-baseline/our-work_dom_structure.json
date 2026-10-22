@@ -1,0 +1,1614 @@
+{
+  "tag": "body",
+  "children": [
+    {
+      "tag": "div",
+      "id": "loading-screen",
+      "class": "fade-out",
+      "children": [
+        {
+          "tag": "div",
+          "class": "loader-furniture-icon",
+          "children": [
+            {
+              "tag": "svg",
+              "children": [
+                {
+                  "tag": "path"
+                },
+                {
+                  "tag": "path"
+                },
+                {
+                  "tag": "path"
+                },
+                {
+                  "tag": "path"
+                },
+                {
+                  "tag": "circle"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "class": "loader-brand"
+        },
+        {
+          "tag": "div",
+          "class": "loader-tagline"
+        },
+        {
+          "tag": "div",
+          "class": "loader-line-container",
+          "children": [
+            {
+              "tag": "div",
+              "class": "loader-line-progress"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "div",
+      "class": "top-notice-bar",
+      "children": [
+        {
+          "tag": "span"
+        },
+        {
+          "tag": "strong"
+        }
+      ]
+    },
+    {
+      "tag": "header",
+      "class": "site-header",
+      "children": [
+        {
+          "tag": "div",
+          "class": "container",
+          "children": [
+            {
+              "tag": "div",
+              "class": "nav-inner",
+              "children": [
+                {
+                  "tag": "a",
+                  "class": "brand-logo",
+                  "children": [
+                    {
+                      "tag": "img",
+                      "class": "brand-logo-img"
+                    },
+                    {
+                      "tag": "div",
+                      "class": "brand-text-wrap",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "class": "brand-name"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "brand-sub"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "nav",
+                  "class": "nav-menu",
+                  "children": [
+                    {
+                      "tag": "a",
+                      "class": "nav-link"
+                    },
+                    {
+                      "tag": "a",
+                      "class": "nav-link"
+                    },
+                    {
+                      "tag": "a",
+                      "class": "nav-link"
+                    },
+                    {
+                      "tag": "a",
+                      "class": "active nav-link"
+                    },
+                    {
+                      "tag": "a",
+                      "class": "nav-link"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "class": "nav-actions",
+                  "children": [
+                    {
+                      "tag": "a",
+                      "id": "header-call-btn",
+                      "class": "nav-header-call-btn",
+                      "children": [
+                        {
+                          "tag": "svg",
+                          "children": [
+                            {
+                              "tag": "path"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "span"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "a",
+                      "id": "header-wa-btn",
+                      "class": "nav-call-btn nav-wa-btn",
+                      "children": [
+                        {
+                          "tag": "svg",
+                          "children": [
+                            {
+                              "tag": "path"
+                            },
+                            {
+                              "tag": "path"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "span"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "button",
+                      "class": "hamburger-btn",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "class": "hamburger-line"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "hamburger-line"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "hamburger-line"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "div",
+      "id": "mobile-drawer",
+      "class": "mobile-drawer",
+      "children": [
+        {
+          "tag": "div",
+          "class": "mobile-drawer-header",
+          "children": [
+            {
+              "tag": "div",
+              "class": "brand-logo",
+              "children": [
+                {
+                  "tag": "img",
+                  "class": "brand-logo-img"
+                },
+                {
+                  "tag": "div",
+                  "class": "brand-text-wrap",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "class": "brand-name"
+                    },
+                    {
+                      "tag": "span",
+                      "class": "brand-sub"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "button",
+              "id": "drawer-close-btn",
+              "class": "mobile-drawer-close",
+              "children": [
+                {
+                  "tag": "svg",
+                  "children": [
+                    {
+                      "tag": "path"
+                    }
+                  ]
+                },
+                {
+                  "tag": "span"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "ul",
+          "class": "mobile-nav-list",
+          "children": [
+            {
+              "tag": "li",
+              "children": [
+                {
+                  "tag": "a",
+                  "class": "mobile-nav-link"
+                }
+              ]
+            },
+            {
+              "tag": "li",
+              "children": [
+                {
+                  "tag": "a",
+                  "class": "mobile-nav-link"
+                }
+              ]
+            },
+            {
+              "tag": "li",
+              "children": [
+                {
+                  "tag": "a",
+                  "class": "mobile-nav-link"
+                }
+              ]
+            },
+            {
+              "tag": "li",
+              "children": [
+                {
+                  "tag": "a",
+                  "class": "mobile-nav-link"
+                }
+              ]
+            },
+            {
+              "tag": "li",
+              "children": [
+                {
+                  "tag": "a",
+                  "class": "mobile-nav-link"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "class": "mobile-drawer-footer",
+          "children": [
+            {
+              "tag": "div",
+              "class": "mobile-contact-pill",
+              "children": [
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "svg",
+                      "children": [
+                        {
+                          "tag": "path"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "span"
+                    }
+                  ]
+                },
+                {
+                  "tag": "span"
+                }
+              ]
+            },
+            {
+              "tag": "a",
+              "class": "btn btn-full btn-primary",
+              "children": [
+                {
+                  "tag": "svg",
+                  "children": [
+                    {
+                      "tag": "path"
+                    }
+                  ]
+                },
+                {
+                  "tag": "span"
+                }
+              ]
+            },
+            {
+              "tag": "a",
+              "class": "btn btn-full btn-whatsapp",
+              "children": [
+                {
+                  "tag": "svg",
+                  "children": [
+                    {
+                      "tag": "path"
+                    }
+                  ]
+                },
+                {
+                  "tag": "span"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "div",
+      "id": "drawer-backdrop",
+      "class": "drawer-backdrop"
+    },
+    {
+      "tag": "section",
+      "class": "work-hero",
+      "children": [
+        {
+          "tag": "div",
+          "class": "container",
+          "children": [
+            {
+              "tag": "nav",
+              "class": "breadcrumbs",
+              "children": [
+                {
+                  "tag": "a"
+                },
+                {
+                  "tag": "span",
+                  "class": "separator"
+                },
+                {
+                  "tag": "span",
+                  "class": "current"
+                }
+              ]
+            },
+            {
+              "tag": "h1",
+              "class": "page-title"
+            },
+            {
+              "tag": "p",
+              "class": "page-subtitle"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "main",
+      "id": "gallery-content",
+      "class": "gallery-section",
+      "children": [
+        {
+          "tag": "div",
+          "class": "container",
+          "children": [
+            {
+              "tag": "div",
+              "class": "gallery-toolbar",
+              "children": [
+                {
+                  "tag": "div",
+                  "class": "toolbar-top-row",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "search-box-wrap",
+                      "children": [
+                        {
+                          "tag": "svg",
+                          "children": [
+                            {
+                              "tag": "circle"
+                            },
+                            {
+                              "tag": "line"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "input",
+                          "id": "gallery-search-input",
+                          "class": "gallery-search-input"
+                        },
+                        {
+                          "tag": "button",
+                          "id": "btn-clear-search",
+                          "class": "search-clear-btn"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "id": "category-pills-wrap",
+                  "class": "category-pills-wrap",
+                  "children": [
+                    {
+                      "tag": "button",
+                      "class": "active cat-pill-btn",
+                      "children": [
+                        {
+                          "tag": "span"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "cat-pill-count"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "button",
+                      "class": "cat-pill-btn",
+                      "children": [
+                        {
+                          "tag": "span"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "cat-pill-count"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "button",
+                      "class": "cat-pill-btn",
+                      "children": [
+                        {
+                          "tag": "span"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "cat-pill-count"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "button",
+                      "class": "cat-pill-btn",
+                      "children": [
+                        {
+                          "tag": "span"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "cat-pill-count"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "button",
+                      "class": "cat-pill-btn",
+                      "children": [
+                        {
+                          "tag": "span"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "cat-pill-count"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "button",
+                      "class": "cat-pill-btn",
+                      "children": [
+                        {
+                          "tag": "span"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "cat-pill-count"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "button",
+                      "class": "cat-pill-btn",
+                      "children": [
+                        {
+                          "tag": "span"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "cat-pill-count"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "class": "gallery-results-bar",
+              "children": [
+                {
+                  "tag": "div",
+                  "id": "gallery-results-count",
+                  "class": "gallery-results-count",
+                  "children": [
+                    {
+                      "tag": "strong"
+                    },
+                    {
+                      "tag": "strong"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "a",
+                      "class": "footer-link"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "id": "gallery-grid",
+              "class": "gallery-grid",
+              "children": [
+                {
+                  "tag": "article",
+                  "class": "work-card",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "work-card-img-wrap",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "class": "work-card-img"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "work-card-badge"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "work-card-zoom-indicator",
+                          "children": [
+                            {
+                              "tag": "svg",
+                              "children": [
+                                {
+                                  "tag": "circle"
+                                },
+                                {
+                                  "tag": "line"
+                                },
+                                {
+                                  "tag": "line"
+                                },
+                                {
+                                  "tag": "line"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "span"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "work-card-body",
+                      "children": [
+                        {
+                          "tag": "h2",
+                          "class": "work-card-title"
+                        },
+                        {
+                          "tag": "p",
+                          "class": "work-card-desc"
+                        },
+                        {
+                          "tag": "div",
+                          "class": "work-card-actions",
+                          "children": [
+                            {
+                              "tag": "button",
+                              "class": "btn-card-inspect",
+                              "children": [
+                                {
+                                  "tag": "span"
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "a",
+                              "class": "btn-card-wa",
+                              "children": [
+                                {
+                                  "tag": "svg",
+                                  "children": [
+                                    {
+                                      "tag": "path"
+                                    },
+                                    {
+                                      "tag": "path"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "article",
+                  "class": "work-card",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "work-card-img-wrap",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "class": "work-card-img"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "work-card-badge"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "work-card-zoom-indicator",
+                          "children": [
+                            {
+                              "tag": "svg",
+                              "children": [
+                                {
+                                  "tag": "circle"
+                                },
+                                {
+                                  "tag": "line"
+                                },
+                                {
+                                  "tag": "line"
+                                },
+                                {
+                                  "tag": "line"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "span"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "work-card-body",
+                      "children": [
+                        {
+                          "tag": "h2",
+                          "class": "work-card-title"
+                        },
+                        {
+                          "tag": "p",
+                          "class": "work-card-desc"
+                        },
+                        {
+                          "tag": "div",
+                          "class": "work-card-actions",
+                          "children": [
+                            {
+                              "tag": "button",
+                              "class": "btn-card-inspect",
+                              "children": [
+                                {
+                                  "tag": "span"
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "a",
+                              "class": "btn-card-wa",
+                              "children": [
+                                {
+                                  "tag": "svg",
+                                  "children": [
+                                    {
+                                      "tag": "path"
+                                    },
+                                    {
+                                      "tag": "path"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "article",
+                  "class": "work-card",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "work-card-img-wrap",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "class": "work-card-img"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "work-card-badge"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "work-card-zoom-indicator",
+                          "children": [
+                            {
+                              "tag": "svg",
+                              "children": [
+                                {
+                                  "tag": "circle"
+                                },
+                                {
+                                  "tag": "line"
+                                },
+                                {
+                                  "tag": "line"
+                                },
+                                {
+                                  "tag": "line"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "span"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "work-card-body",
+                      "children": [
+                        {
+                          "tag": "h2",
+                          "class": "work-card-title"
+                        },
+                        {
+                          "tag": "p",
+                          "class": "work-card-desc"
+                        },
+                        {
+                          "tag": "div",
+                          "class": "work-card-actions",
+                          "children": [
+                            {
+                              "tag": "button",
+                              "class": "btn-card-inspect",
+                              "children": [
+                                {
+                                  "tag": "span"
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "a",
+                              "class": "btn-card-wa",
+                              "children": [
+                                {
+                                  "tag": "svg",
+                                  "children": [
+                                    {
+                                      "tag": "path"
+                                    },
+                                    {
+                                      "tag": "path"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "article",
+                  "class": "work-card",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "work-card-img-wrap",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "class": "work-card-img"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "work-card-badge"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "work-card-zoom-indicator",
+                          "children": [
+                            {
+                              "tag": "svg",
+                              "children": [
+                                {
+                                  "tag": "circle"
+                                },
+                                {
+                                  "tag": "line"
+                                },
+                                {
+                                  "tag": "line"
+                                },
+                                {
+                                  "tag": "line"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "span"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "work-card-body",
+                      "children": [
+                        {
+                          "tag": "h2",
+                          "class": "work-card-title"
+                        },
+                        {
+                          "tag": "p",
+                          "class": "work-card-desc"
+                        },
+                        {
+                          "tag": "div",
+                          "class": "work-card-actions",
+                          "children": [
+                            {
+                              "tag": "button",
+                              "class": "btn-card-inspect",
+                              "children": [
+                                {
+                                  "tag": "span"
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "a",
+                              "class": "btn-card-wa",
+                              "children": [
+                                {
+                                  "tag": "svg",
+                                  "children": [
+                                    {
+                                      "tag": "path"
+                                    },
+                                    {
+                                      "tag": "path"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "article",
+                  "class": "work-card",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "work-card-img-wrap",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "class": "work-card-img"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "work-card-badge"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "work-card-zoom-indicator",
+                          "children": [
+                            {
+                              "tag": "svg",
+                              "children": [
+                                {
+                                  "tag": "circle"
+                                },
+                                {
+                                  "tag": "line"
+                                },
+                                {
+                                  "tag": "line"
+                                },
+                                {
+                                  "tag": "line"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "span"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "work-card-body",
+                      "children": [
+                        {
+                          "tag": "h2",
+                          "class": "work-card-title"
+                        },
+                        {
+                          "tag": "p",
+                          "class": "work-card-desc"
+                        },
+                        {
+                          "tag": "div",
+                          "class": "work-card-actions",
+                          "children": [
+                            {
+                              "tag": "button",
+                              "class": "btn-card-inspect",
+                              "children": [
+                                {
+                                  "tag": "span"
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "a",
+                              "class": "btn-card-wa",
+                              "children": [
+                                {
+                                  "tag": "svg",
+                                  "children": [
+                                    {
+                                      "tag": "path"
+                                    },
+                                    {
+                                      "tag": "path"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "article",
+                  "class": "work-card",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "work-card-img-wrap",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "class": "work-card-img"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "work-card-badge"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "work-card-zoom-indicator",
+                          "children": [
+                            {
+                              "tag": "svg",
+                              "children": [
+                                {
+                                  "tag": "circle"
+                                },
+                                {
+                                  "tag": "line"
+                                },
+                                {
+                                  "tag": "line"
+                                },
+                                {
+                                  "tag": "line"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "span"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "work-card-body",
+                      "children": [
+                        {
+                          "tag": "h2",
+                          "class": "work-card-title"
+                        },
+                        {
+                          "tag": "p",
+                          "class": "work-card-desc"
+                        },
+                        {
+                          "tag": "div",
+                          "class": "work-card-actions",
+                          "children": [
+                            {
+                              "tag": "button",
+                              "class": "btn-card-inspect",
+                              "children": [
+                                {
+                                  "tag": "span"
+                                },
+                                {
+                                  "tag": "span"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "a",
+                              "class": "btn-card-wa",
+                              "children": [
+                                {
+                                  "tag": "svg",
+                                  "children": [
+                                    {
+                                      "tag": "path"
+                                    },
+                                    {
+                                      "tag": "path"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "div",
+      "id": "work-lightbox-modal",
+      "class": "work-lightbox-backdrop",
+      "children": [
+        {
+          "tag": "div",
+          "class": "work-lightbox-container",
+          "children": [
+            {
+              "tag": "button",
+              "id": "btn-close-lightbox-modal",
+              "class": "lightbox-close-btn"
+            },
+            {
+              "tag": "div",
+              "class": "lightbox-img-area",
+              "children": [
+                {
+                  "tag": "img",
+                  "id": "lightbox-img",
+                  "class": "lightbox-img"
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "class": "lightbox-info-area",
+              "children": [
+                {
+                  "tag": "div",
+                  "class": "lightbox-text-wrap",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "id": "lightbox-cat",
+                      "class": "lightbox-cat-badge"
+                    },
+                    {
+                      "tag": "h2",
+                      "id": "lightbox-title",
+                      "class": "lightbox-project-title"
+                    },
+                    {
+                      "tag": "p",
+                      "id": "lightbox-desc",
+                      "class": "lightbox-project-desc"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "class": "lightbox-actions",
+                  "children": [
+                    {
+                      "tag": "a",
+                      "id": "lightbox-wa-btn",
+                      "class": "btn-lightbox-wa",
+                      "children": [
+                        {
+                          "tag": "svg",
+                          "children": [
+                            {
+                              "tag": "path"
+                            },
+                            {
+                              "tag": "path"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "span"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "footer",
+      "class": "site-footer",
+      "children": [
+        {
+          "tag": "div",
+          "class": "container",
+          "children": [
+            {
+              "tag": "div",
+              "class": "footer-grid",
+              "children": [
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "brand-logo",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "class": "brand-logo-img"
+                        },
+                        {
+                          "tag": "div",
+                          "class": "brand-text-wrap",
+                          "children": [
+                            {
+                              "tag": "span",
+                              "class": "brand-name"
+                            },
+                            {
+                              "tag": "span",
+                              "class": "brand-sub"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "p"
+                    },
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "svg",
+                          "children": [
+                            {
+                              "tag": "path"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "span"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "footer-heading"
+                    },
+                    {
+                      "tag": "ul",
+                      "class": "footer-links-list",
+                      "children": [
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "footer-heading"
+                    },
+                    {
+                      "tag": "ul",
+                      "class": "footer-links-list",
+                      "children": [
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "strong"
+                            },
+                            {
+                              "tag": "address",
+                              "children": [
+                                {
+                                  "tag": "strong"
+                                },
+                                {
+                                  "tag": "br"
+                                },
+                                {
+                                  "tag": "br"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "strong"
+                            },
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            },
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "strong"
+                            },
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "class": "footer-bottom",
+              "children": [
+                {
+                  "tag": "div"
+                },
+                {
+                  "tag": "div"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "a",
+      "id": "floating-whatsapp-fab",
+      "class": "floating-whatsapp-fab",
+      "children": [
+        {
+          "tag": "svg",
+          "children": [
+            {
+              "tag": "path"
+            },
+            {
+              "tag": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "nav",
+      "class": "mobile-thumb-bar",
+      "children": [
+        {
+          "tag": "a",
+          "id": "thumb-home",
+          "class": "thumb-tab",
+          "children": [
+            {
+              "tag": "svg",
+              "children": [
+                {
+                  "tag": "path"
+                },
+                {
+                  "tag": "polyline"
+                }
+              ]
+            },
+            {
+              "tag": "span",
+              "class": "thumb-label"
+            }
+          ]
+        },
+        {
+          "tag": "a",
+          "id": "thumb-services",
+          "class": "thumb-tab",
+          "children": [
+            {
+              "tag": "svg",
+              "children": [
+                {
+                  "tag": "rect"
+                },
+                {
+                  "tag": "path"
+                }
+              ]
+            },
+            {
+              "tag": "span",
+              "class": "thumb-label"
+            }
+          ]
+        },
+        {
+          "tag": "a",
+          "id": "thumb-catalog",
+          "class": "thumb-tab",
+          "children": [
+            {
+              "tag": "svg",
+              "children": [
+                {
+                  "tag": "path"
+                },
+                {
+                  "tag": "path"
+                }
+              ]
+            },
+            {
+              "tag": "span",
+              "class": "thumb-label"
+            }
+          ]
+        },
+        {
+          "tag": "a",
+          "id": "thumb-works",
+          "class": "active thumb-tab",
+          "children": [
+            {
+              "tag": "svg",
+              "children": [
+                {
+                  "tag": "rect"
+                },
+                {
+                  "tag": "circle"
+                },
+                {
+                  "tag": "polyline"
+                }
+              ]
+            },
+            {
+              "tag": "span",
+              "class": "thumb-label"
+            }
+          ]
+        },
+        {
+          "tag": "a",
+          "id": "thumb-contact",
+          "class": "thumb-highlight thumb-tab",
+          "children": [
+            {
+              "tag": "svg",
+              "children": [
+                {
+                  "tag": "path"
+                }
+              ]
+            },
+            {
+              "tag": "span",
+              "class": "thumb-label"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

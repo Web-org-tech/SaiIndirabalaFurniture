@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-10-22T06:25:40.981Z",
+  "pages": {
+    "home": {
+      "route": "/",
+      "screenshots": {
+        "390": "home_390px.png",
+        "768": "home_768px.png",
+        "1440": "home_1440px.png"
+      },
+      "visibleTextHash": "4e159e8cd05e50bb55f4858fb94fae0adfa23b863c5836a907e5847df387e50b",
+      "domStructureHash": "97fcfaee1b78ae4f033acdb1bce62a08564ebdaf22ab305f3cc7fd4ec2bf1855",
+      "visibleTextFile": "home_visible_text.txt",
+      "domStructureFile": "home_dom_structure.json"
+    },
+    "catalog": {
+      "route": "/catalog",
+      "screenshots": {
+        "390": "catalog_390px.png",
+        "768": "catalog_768px.png",
+        "1440": "catalog_1440px.png"
+      },
+      "visibleTextHash": "6025989cbcdcf553f0362e2037f42baa1e63477af58ba6bf98cffe784f115aa0",
+      "domStructureHash": "0ae0a10602080ecfda62ff2f91860f8fdc6ba98065e37c3dc67e9cd32a0c973f",
+      "visibleTextFile": "catalog_visible_text.txt",
+      "domStructureFile": "catalog_dom_structure.json"
+    },
+    "our-work": {
+      "route": "/our-work",
+      "screenshots": {
+        "390": "our-work_390px.png",
+        "768": "our-work_768px.png",
+        "1440": "our-work_1440px.png"
+      },
+      "visibleTextHash": "34eda82210d5d3751041cc152e8f542311d71edb686aa9567c0f3f27b5d84114",
+      "domStructureHash": "834dcae9994b61f0ae32be2cddd97da136acc13590604ffbffcf9210a4cd601b",
+      "visibleTextFile": "our-work_visible_text.txt",
+      "domStructureFile": "our-work_dom_structure.json"
+    }
+  }
+}

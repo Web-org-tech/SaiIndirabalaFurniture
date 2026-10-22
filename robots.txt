@@ -1,6 +1,12 @@
+# robots.txt for Sai Indirabala Furnitures (https://saiindirabala.in)
 User-agent: *
 Allow: /
+Allow: /images/
+Allow: /css/
+Allow: /js/
 Disallow: /admin/
+Disallow: /admin
+Disallow: /scratch/
 
 # Sitemap Location
 Sitemap: https://saiindirabala.in/sitemap.xml

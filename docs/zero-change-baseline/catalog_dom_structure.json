@@ -1,0 +1,998 @@
+{
+  "tag": "body",
+  "children": [
+    {
+      "tag": "div",
+      "id": "loading-screen",
+      "class": "fade-out",
+      "children": [
+        {
+          "tag": "div",
+          "class": "loader-furniture-icon",
+          "children": [
+            {
+              "tag": "svg",
+              "children": [
+                {
+                  "tag": "path"
+                },
+                {
+                  "tag": "path"
+                },
+                {
+                  "tag": "path"
+                },
+                {
+                  "tag": "path"
+                },
+                {
+                  "tag": "circle"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "class": "loader-brand"
+        },
+        {
+          "tag": "div",
+          "class": "loader-tagline"
+        },
+        {
+          "tag": "div",
+          "class": "loader-line-container",
+          "children": [
+            {
+              "tag": "div",
+              "class": "loader-line-progress"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "div",
+      "class": "top-notice-bar",
+      "children": [
+        {
+          "tag": "span"
+        },
+        {
+          "tag": "strong"
+        }
+      ]
+    },
+    {
+      "tag": "header",
+      "class": "site-header",
+      "children": [
+        {
+          "tag": "div",
+          "class": "container",
+          "children": [
+            {
+              "tag": "div",
+              "class": "nav-inner",
+              "children": [
+                {
+                  "tag": "a",
+                  "class": "brand-logo",
+                  "children": [
+                    {
+                      "tag": "img",
+                      "class": "brand-logo-img"
+                    },
+                    {
+                      "tag": "div",
+                      "class": "brand-text-wrap",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "class": "brand-name"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "brand-sub"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "nav",
+                  "class": "nav-menu",
+                  "children": [
+                    {
+                      "tag": "a",
+                      "class": "nav-link"
+                    },
+                    {
+                      "tag": "a",
+                      "class": "nav-link"
+                    },
+                    {
+                      "tag": "a",
+                      "class": "active nav-link"
+                    },
+                    {
+                      "tag": "a",
+                      "class": "nav-link"
+                    },
+                    {
+                      "tag": "a",
+                      "class": "nav-link"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "class": "nav-actions",
+                  "children": [
+                    {
+                      "tag": "a",
+                      "id": "header-call-btn",
+                      "class": "nav-header-call-btn",
+                      "children": [
+                        {
+                          "tag": "svg",
+                          "children": [
+                            {
+                              "tag": "path"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "span"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "a",
+                      "id": "header-wa-btn",
+                      "class": "nav-call-btn nav-wa-btn",
+                      "children": [
+                        {
+                          "tag": "svg",
+                          "children": [
+                            {
+                              "tag": "path"
+                            },
+                            {
+                              "tag": "path"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "span"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "button",
+                      "class": "hamburger-btn",
+                      "children": [
+                        {
+                          "tag": "span",
+                          "class": "hamburger-line"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "hamburger-line"
+                        },
+                        {
+                          "tag": "span",
+                          "class": "hamburger-line"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "div",
+      "id": "mobile-drawer",
+      "class": "mobile-drawer",
+      "children": [
+        {
+          "tag": "div",
+          "class": "mobile-drawer-header",
+          "children": [
+            {
+              "tag": "div",
+              "class": "brand-logo",
+              "children": [
+                {
+                  "tag": "img",
+                  "class": "brand-logo-img"
+                },
+                {
+                  "tag": "div",
+                  "class": "brand-text-wrap",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "class": "brand-name"
+                    },
+                    {
+                      "tag": "span",
+                      "class": "brand-sub"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "button",
+              "id": "drawer-close-btn",
+              "class": "mobile-drawer-close",
+              "children": [
+                {
+                  "tag": "svg",
+                  "children": [
+                    {
+                      "tag": "path"
+                    }
+                  ]
+                },
+                {
+                  "tag": "span"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "ul",
+          "class": "mobile-nav-list",
+          "children": [
+            {
+              "tag": "li",
+              "children": [
+                {
+                  "tag": "a",
+                  "class": "mobile-nav-link"
+                }
+              ]
+            },
+            {
+              "tag": "li",
+              "children": [
+                {
+                  "tag": "a",
+                  "class": "mobile-nav-link"
+                }
+              ]
+            },
+            {
+              "tag": "li",
+              "children": [
+                {
+                  "tag": "a",
+                  "class": "mobile-nav-link"
+                }
+              ]
+            },
+            {
+              "tag": "li",
+              "children": [
+                {
+                  "tag": "a",
+                  "class": "mobile-nav-link"
+                }
+              ]
+            },
+            {
+              "tag": "li",
+              "children": [
+                {
+                  "tag": "a",
+                  "class": "mobile-nav-link"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "class": "mobile-drawer-footer",
+          "children": [
+            {
+              "tag": "div",
+              "class": "mobile-contact-pill",
+              "children": [
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "svg",
+                      "children": [
+                        {
+                          "tag": "path"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "span"
+                    }
+                  ]
+                },
+                {
+                  "tag": "span"
+                }
+              ]
+            },
+            {
+              "tag": "a",
+              "class": "btn btn-full btn-primary",
+              "children": [
+                {
+                  "tag": "svg",
+                  "children": [
+                    {
+                      "tag": "path"
+                    }
+                  ]
+                },
+                {
+                  "tag": "span"
+                }
+              ]
+            },
+            {
+              "tag": "a",
+              "class": "btn btn-full btn-whatsapp",
+              "children": [
+                {
+                  "tag": "svg",
+                  "children": [
+                    {
+                      "tag": "path"
+                    }
+                  ]
+                },
+                {
+                  "tag": "span"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "div",
+      "id": "drawer-backdrop",
+      "class": "drawer-backdrop"
+    },
+    {
+      "tag": "section",
+      "class": "page-hero",
+      "children": [
+        {
+          "tag": "div",
+          "class": "container",
+          "children": [
+            {
+              "tag": "nav",
+              "class": "breadcrumbs",
+              "children": [
+                {
+                  "tag": "a"
+                },
+                {
+                  "tag": "span",
+                  "class": "separator"
+                },
+                {
+                  "tag": "span",
+                  "class": "current"
+                }
+              ]
+            },
+            {
+              "tag": "h1",
+              "class": "page-title"
+            },
+            {
+              "tag": "p",
+              "class": "page-subtitle"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "main",
+      "id": "catalog-content",
+      "class": "catalog-section",
+      "children": [
+        {
+          "tag": "div",
+          "class": "container",
+          "children": [
+            {
+              "tag": "div",
+              "class": "catalog-toolbar",
+              "children": [
+                {
+                  "tag": "div",
+                  "class": "toolbar-top-row",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "search-box-wrap",
+                      "children": [
+                        {
+                          "tag": "svg",
+                          "children": [
+                            {
+                              "tag": "circle"
+                            },
+                            {
+                              "tag": "line"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "input",
+                          "id": "catalog-search-input",
+                          "class": "catalog-search-input"
+                        },
+                        {
+                          "tag": "button",
+                          "id": "btn-clear-search",
+                          "class": "search-clear-btn"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "id": "category-pills-wrap",
+                  "class": "category-pills-wrap"
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "class": "catalog-results-bar",
+              "children": [
+                {
+                  "tag": "div",
+                  "id": "catalog-results-count",
+                  "class": "catalog-results-count"
+                },
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "a",
+                      "class": "footer-link"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "id": "products-grid",
+              "class": "products-grid",
+              "children": [
+                {
+                  "tag": "div",
+                  "class": "catalog-state-box",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "state-spinner"
+                    },
+                    {
+                      "tag": "div",
+                      "class": "catalog-state-title"
+                    },
+                    {
+                      "tag": "div",
+                      "class": "catalog-state-text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "div",
+      "id": "product-detail-modal",
+      "class": "product-modal-backdrop",
+      "children": [
+        {
+          "tag": "div",
+          "class": "product-modal-dialog",
+          "children": [
+            {
+              "tag": "button",
+              "id": "btn-close-product-modal",
+              "class": "product-modal-close-btn"
+            },
+            {
+              "tag": "div",
+              "class": "product-modal-grid",
+              "children": [
+                {
+                  "tag": "div",
+                  "class": "modal-gallery-column",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "modal-main-img-wrap",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "id": "modal-main-img",
+                          "class": "modal-main-img"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "id": "modal-thumbnails-strip",
+                      "class": "modal-thumbnails-strip"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "class": "modal-info-column",
+                  "children": [
+                    {
+                      "tag": "span",
+                      "id": "modal-prod-cat",
+                      "class": "modal-cat-badge"
+                    },
+                    {
+                      "tag": "h2",
+                      "id": "modal-prod-title",
+                      "class": "modal-product-title"
+                    },
+                    {
+                      "tag": "div",
+                      "id": "modal-prod-desc",
+                      "class": "modal-product-desc"
+                    },
+                    {
+                      "tag": "div",
+                      "id": "modal-specs-wrap",
+                      "class": "modal-specs-wrap",
+                      "children": [
+                        {
+                          "tag": "div",
+                          "class": "modal-specs-heading"
+                        },
+                        {
+                          "tag": "table",
+                          "id": "modal-specs-table",
+                          "class": "modal-specs-table"
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "div",
+                      "class": "modal-actions-group",
+                      "children": [
+                        {
+                          "tag": "a",
+                          "id": "modal-btn-wa",
+                          "class": "btn-modal-wa",
+                          "children": [
+                            {
+                              "tag": "svg",
+                              "children": [
+                                {
+                                  "tag": "path"
+                                },
+                                {
+                                  "tag": "path"
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "span"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "a",
+                          "id": "modal-btn-call",
+                          "class": "btn-modal-call",
+                          "children": [
+                            {
+                              "tag": "span"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "footer",
+      "class": "site-footer",
+      "children": [
+        {
+          "tag": "div",
+          "class": "container",
+          "children": [
+            {
+              "tag": "div",
+              "class": "footer-grid",
+              "children": [
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "brand-logo",
+                      "children": [
+                        {
+                          "tag": "img",
+                          "class": "brand-logo-img"
+                        },
+                        {
+                          "tag": "div",
+                          "class": "brand-text-wrap",
+                          "children": [
+                            {
+                              "tag": "span",
+                              "class": "brand-name"
+                            },
+                            {
+                              "tag": "span",
+                              "class": "brand-sub"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "p"
+                    },
+                    {
+                      "tag": "div",
+                      "children": [
+                        {
+                          "tag": "svg",
+                          "children": [
+                            {
+                              "tag": "path"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "span"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "footer-heading"
+                    },
+                    {
+                      "tag": "ul",
+                      "class": "footer-links-list",
+                      "children": [
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "children": [
+                    {
+                      "tag": "div",
+                      "class": "footer-heading"
+                    },
+                    {
+                      "tag": "ul",
+                      "class": "footer-links-list",
+                      "children": [
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "strong"
+                            },
+                            {
+                              "tag": "address",
+                              "children": [
+                                {
+                                  "tag": "strong"
+                                },
+                                {
+                                  "tag": "br"
+                                },
+                                {
+                                  "tag": "br"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "strong"
+                            },
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            },
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "children": [
+                            {
+                              "tag": "strong"
+                            },
+                            {
+                              "tag": "a",
+                              "class": "footer-link"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "class": "footer-bottom",
+              "children": [
+                {
+                  "tag": "div"
+                },
+                {
+                  "tag": "div"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "a",
+      "id": "floating-whatsapp-fab",
+      "class": "floating-whatsapp-fab",
+      "children": [
+        {
+          "tag": "svg",
+          "children": [
+            {
+              "tag": "path"
+            },
+            {
+              "tag": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "nav",
+      "class": "mobile-thumb-bar",
+      "children": [
+        {
+          "tag": "a",
+          "id": "thumb-home",
+          "class": "thumb-tab",
+          "children": [
+            {
+              "tag": "svg",
+              "children": [
+                {
+                  "tag": "path"
+                },
+                {
+                  "tag": "polyline"
+                }
+              ]
+            },
+            {
+              "tag": "span",
+              "class": "thumb-label"
+            }
+          ]
+        },
+        {
+          "tag": "a",
+          "id": "thumb-services",
+          "class": "thumb-tab",
+          "children": [
+            {
+              "tag": "svg",
+              "children": [
+                {
+                  "tag": "rect"
+                },
+                {
+                  "tag": "path"
+                }
+              ]
+            },
+            {
+              "tag": "span",
+              "class": "thumb-label"
+            }
+          ]
+        },
+        {
+          "tag": "a",
+          "id": "thumb-catalog",
+          "class": "active thumb-tab",
+          "children": [
+            {
+              "tag": "svg",
+              "children": [
+                {
+                  "tag": "path"
+                },
+                {
+                  "tag": "path"
+                }
+              ]
+            },
+            {
+              "tag": "span",
+              "class": "thumb-label"
+            }
+          ]
+        },
+        {
+          "tag": "a",
+          "id": "thumb-works",
+          "class": "thumb-tab",
+          "children": [
+            {
+              "tag": "svg",
+              "children": [
+                {
+                  "tag": "rect"
+                },
+                {
+                  "tag": "circle"
+                },
+                {
+                  "tag": "polyline"
+                }
+              ]
+            },
+            {
+              "tag": "span",
+              "class": "thumb-label"
+            }
+          ]
+        },
+        {
+          "tag": "a",
+          "id": "thumb-contact",
+          "class": "thumb-highlight thumb-tab",
+          "children": [
+            {
+              "tag": "svg",
+              "children": [
+                {
+                  "tag": "path"
+                }
+              ]
+            },
+            {
+              "tag": "span",
+              "class": "thumb-label"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

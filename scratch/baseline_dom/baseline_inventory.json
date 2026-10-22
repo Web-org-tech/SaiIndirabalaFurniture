@@ -1,0 +1,26 @@
+{
+  "404": {
+    "file": "404.html",
+    "textHash": "b37b354c27511211b85c951c03ec1cb93765f0d5ff8809db2484796f92a3e38e",
+    "domHash": "b094c93becb79151d0f29d07298349cc9153631f83996fdd4f8cb5be06a0eb88",
+    "textLength": 368
+  },
+  "index": {
+    "file": "index.html",
+    "textHash": "37d10a32770862af55675bc178779435a0118cf21e77c0539135e83931a826f9",
+    "domHash": "722bf52e4b84e787808a368baefa9a612095984dcda943a2897bb4ac2bda1d99",
+    "textLength": 12587
+  },
+  "catalog": {
+    "file": "catalog.html",
+    "textHash": "c9a01cd33e201b0acf27c4a013aba04d822146f637142a9ca9ce4d9cad2757ad",
+    "domHash": "413ec5e9c909d4101372585d6ee4ac2b987c2024c6f69d71bfb79bc229317e1a",
+    "textLength": 3782
+  },
+  "our-work": {
+    "file": "our-work.html",
+    "textHash": "0d7a457b306e0e516c6d7eb42c14d86fb7d6a2db233711e2ac8085a585bd352e",
+    "domHash": "0c86990e90f7e226b8aaa4bed279911a2030fda54e912e61e36f110b4ed11a39",
+    "textLength": 3372
+  }
+}
